@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import JobData from "../js/data";
+import JobData from "./data";
 
 console.log(JobData);
 
