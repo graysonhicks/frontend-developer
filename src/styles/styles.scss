@@ -1,0 +1,35 @@
+$color-black-rock: #0e0227;
+$color-dandelion: #ffd566;
+$color-early-dawn: #fff8e6;
+$color-chelsea-gem: #996f00;
+$color-selective-yellow: #ffb900;
+$color-cornflower-blue: #8376ff;
+$color-titan-white: #eae8ff;
+$color-arapawa: #130b67;
+$color-torea-bay: #2012ab;
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: $color-black-rock;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.intro {
+  font-size: 4rem;
+  font-family: 'Futura', 'Arial', 'Helvetica', sans-serif;
+  color: $color-titan-white;
+  animation: spin 4s ease-in-out 1s infinite;
+}
