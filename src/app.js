@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 class HelloMessage extends React.Component {
   render() {
-    return <div>Hello {this.props.name}</div>;
+    return <div>Hello {this.props.name}!</div>;
   }
 }
 
