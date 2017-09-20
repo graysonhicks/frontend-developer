@@ -1,15 +1,23 @@
-import React from "react";
+import React, {Component} from "react";
 import ReactDOM from "react-dom";
 
-import JobData from "./data/index";
-console.log(JobData);
+import Data from "./data/index";
+
+import Heading from "./components/Heading";
 import Styles from "./styles/styles.scss";
 
-class HelloMessage extends React.Component {
+class App extends Component {
+
   render() {
-    return <div className="intro">Hello {this.props.JobData.headline}!</div>;
+    return (
+      <div>
+          <Heading title={Data.JobData.headline} />
+      </div>
+    )
   }
 }
 
 var mountNode = document.getElementById("app");
-ReactDOM.render(<HelloMessage JobData={JobData} />, mountNode);
+
+ReactDOM.render(
+  <App Data={Data}/>, mountNode);

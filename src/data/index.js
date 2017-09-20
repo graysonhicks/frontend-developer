@@ -93,4 +93,4 @@ function PTO() { return enumerate("Accrued", "Unlimited") }
 // https://github.com/RougeWare/Micro-JS-Enum/tree/master/lib
 function enumerate() { let v=arguments;let s={all:[],keys:v};for(let i=v.length;i--;)s[v[i]]=s.all[i]=v[i];return s };
 
-module.exports = JobData;
+module.exports = {JobData, EmploymentType, ExperienceLevels, CompanySize, VersionControlSystem, IssueTrackers, BuildServers, CodeAnalysisTools, KnowledgeRepos, TravelOptions, ScheduleOptions, RemoteWorking, RelocationPackages, OperationSystems, MachineType, Monitors, Level, TrainingType, PTO};
