@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Heading({title}) {
+function Heading() {
   return (
     <div>
-      <h1 className="intro">{title}</h1>
+      <h1 className="intro"></h1>
     </div>
   );
 }

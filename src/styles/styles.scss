@@ -8,19 +8,46 @@ $color-titan-white: #eae8ff;
 $color-arapawa: #130b67;
 $color-torea-bay: #2012ab;
 
+$font-futura: 'Futura', 'Arial', 'Helvetica', sans-serif;
+$font-lato: 'Lato', 'Arial', 'Helvetica', sans-serif;
+
 body {
   margin: 0;
   height: 100vh;
-  background-color: $color-black-rock;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
+  background-color: $color-titan-white;
+}
+
+.main-container {
+  padding: 0;
+  height: 100vh;
 }
 
 .intro {
   font-size: 4rem;
-  font-family: 'Futura', 'Arial', 'Helvetica', sans-serif;
-  color: $color-titan-white;
+  font-family: $font-futura;
+  color: $color-black-rock;
+  text-transform: uppercase;
+  font-weight: bold;
   // animation: spin 4s ease-in-out 1s infinite;
+}
+
+.left-container {
+  padding-left: 0;
+  background-color: white;
+  color: $color-black-rock;
+  height: 100%;
+  border-right: 1px solid $color-cornflower-blue;
+}
+
+.left {
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+.left-heading {
+  font-family: $font-futura;
+  font-weight: lighter;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: underline;
 }
