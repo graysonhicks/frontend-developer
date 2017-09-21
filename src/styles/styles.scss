@@ -11,15 +11,19 @@ $color-torea-bay: #2012ab;
 $font-futura: 'Futura', 'Arial', 'Helvetica', sans-serif;
 $font-lato: 'Lato', 'Arial', 'Helvetica', sans-serif;
 
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100%;
   background-color: $color-titan-white;
 }
 
 .main-container {
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .intro {
@@ -35,13 +39,16 @@ body {
   padding-left: 0;
   background-color: white;
   color: $color-black-rock;
-  height: 100%;
   border-right: 1px solid $color-cornflower-blue;
+  height: 100vh;
 }
 
 .left {
   padding-left: 15px;
   padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .left-heading {
@@ -50,4 +57,19 @@ body {
   text-transform: uppercase;
   letter-spacing: 2px;
   text-decoration: underline;
+}
+
+.categories-item {
+  text-transform: capitalize;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.category-label {
+  font-family: $font-futura;
+  font-size: 5rem;
+  font-weight: bold;
 }
