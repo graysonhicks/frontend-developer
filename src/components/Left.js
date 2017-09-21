@@ -9,7 +9,7 @@ class Left extends Component {
 
     return Object.keys(clone).map((key, index) => {
 
-      return <LeftItem key={index} label={key} info={clone[key]} changeCategory={this.props.changeCategory}></LeftItem>
+      return <LeftItem key={index} index={index} label={key} info={clone[key]} changeCategory={this.props.changeCategory}></LeftItem>
 
     })
 
@@ -20,8 +20,6 @@ class Left extends Component {
 
     return (
       <div className="left">
-        <div className="left-heading">{this.props.jobData.headline}</div>
-
           {listItems}
 
       </div>

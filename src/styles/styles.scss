@@ -1,11 +1,16 @@
 $color-black-rock: #0e0227;
-$color-dandelion: #ffd566;
-$color-early-dawn: #fff8e6;
-$color-chelsea-gem: #996f00;
-$color-selective-yellow: #ffb900;
-$color-cornflower-blue: #8376ff;
+
 $color-titan-white: #eae8ff;
-$color-arapawa: #130b67;
+$color-malibu: #80bcff;
+$color-french-pass: #bfdeff;
+$color-congress-blue: #003e82;
+$color-endeavour: #0059ba;
+$color-heliotrope: #bd80ff;
+$color-mauve: #debfff;
+$color-christalle: #34006b;
+$color-pigment-indigo: #4a0099;
+$color-melrose: #978dff;
+$color-arapawa: #160d78;
 $color-torea-bay: #2012ab;
 
 $font-futura: 'Futura', 'Arial', 'Helvetica', sans-serif;
@@ -39,35 +44,40 @@ body {
 
 .left-container {
   padding-left: 0;
-  background-color: white;
+  padding-right: 0;
+  background-color: $color-titan-white;
   color: $color-black-rock;
-  border-right: 1px solid $color-cornflower-blue;
   height: 100vh;
 }
 
 .left {
-  padding-left: 15px;
-  padding-top: 15px;
   display: flex;
   flex-direction: column;
   height: 100%;
-}
-
-.left-heading {
-  font-family: $font-futura;
-  font-weight: lighter;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-decoration: underline;
 }
 
 .categories-item {
   text-transform: capitalize;
   flex: 1;
   display: flex;
+  font-family: 'Gotham Light';
   align-items: center;
-  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: pointer;
   font-weight: bold;
+  font-size: 1.75rem;
+  transition: background-color .7s;
+
+  &:hover,
+  &:focus {
+    background-color: $color-malibu;
+  }
+
+  .left-icons {
+    margin-right: 15px;
+  }
 }
 
 .category-label {
@@ -77,7 +87,7 @@ body {
 }
 .info-container {
     background-color: $color-black-rock;
-    color: $color-early-dawn;
+    color: $color-titan-white;
 }
 .info-container,
 .category-info {
