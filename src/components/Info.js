@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-
+import StartScreen from "./StartScreen";
 class Info extends Component {
 
   render() {
@@ -10,7 +10,7 @@ class Info extends Component {
         {this.props.label}
       </div>
       <div className="category-info">
-        {this.props.info ? this.props.info.buildserver : null}
+        {this.props.info ? this.props.info.buildserver : <StartScreen/>}
       </div>
     </div>
     )

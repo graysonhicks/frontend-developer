@@ -1,0 +1,18 @@
+.start-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.start-screen-heading {
+  font-family: $font-futura;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.start-screen-description {
+  font-family: 'Garamond';
+  font-size: 20px;
+}
