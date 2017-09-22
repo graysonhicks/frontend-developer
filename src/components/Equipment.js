@@ -29,8 +29,37 @@ class Equipment extends Component {
     console.log(dataChoices);
 
     return (
+      <div className="equipment">
+        <div className="box-row">
+          <div className="box">
+            <div className="box-heading">
+              Operating Systems
+            </div>
+            {dataChoices.OperationSystems.map((tool) => {
+              if(tool.replace(/\s/g, "") == cleanData.operatingsystem){
+                return <div>{tool} <IoCheckmarkCircled/></div>
+              } else {
+                return <div>{tool}</div>
+              }
 
-    );
+            })}
+          </div>
+                <div className="box">
+                  <div className="box-heading">
+                    Machine Type
+                  </div>
+                  {dataChoices.MachineType.map((tool) => {
+                    if(tool.replace(/\s/g, "") == cleanData.computer){
+                      return <div>{tool} <IoCheckmarkCircled/></div>
+                    } else {
+                      return <div>{tool}</div>
+                    }
+
+                  })}
+                </div>
+            </div>
+        </div>
+    )
   }}
 
   export default Equipment;
