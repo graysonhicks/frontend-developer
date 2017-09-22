@@ -1,3 +1,10 @@
-.checkbox-container {
-  height: 100px;
+.methodology {
+  .checkbox-container {
+    height: 100%;
+  }
+
+  .box-row {
+    height: 40vh;
+    padding-bottom: 10px;
+  }
 }

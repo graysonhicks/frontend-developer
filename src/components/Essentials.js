@@ -35,7 +35,7 @@ class Essentials extends Component {
           </div>
         </div>
 
-        <div className="box flex-2">
+        <div className="box flex-2 heliotrope">
           <div className="box-heading">
             {cleanData.employment}
           </div>
@@ -44,7 +44,7 @@ class Essentials extends Component {
         </div>
           <div className="box-row">
 
-        <div className="box">
+        <div className="box congress-blue">
           <div className="box-heading">
             {cleanData.experience[0]}
           </div>
