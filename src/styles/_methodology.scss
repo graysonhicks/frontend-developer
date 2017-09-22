@@ -1,10 +1,25 @@
 .methodology {
-  .checkbox-container {
+  .box {
     height: 100%;
+
   }
 
   .box-row {
     height: 40vh;
     padding-bottom: 10px;
+  }
+
+  .methodology-descriptions {
+    color: $color-black-rock;
+
+  }
+
+  .checkbox-container {
+    font-size: 24px;
+  }
+
+  .methodology-checks {
+    color: $color-black-rock;
+    float: right;
   }
 }

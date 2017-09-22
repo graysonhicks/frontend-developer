@@ -8,6 +8,7 @@ import Left from "./Left";
 import HomeLink from "./HomeLink";
 import Essentials from "./Essentials";
 import Methodology from "./Methodology";
+import Specs from "./Specs";
 
 class Info extends Component {
   filterData(){
@@ -28,7 +29,11 @@ class Info extends Component {
             <div className="category-info">
                 <Switch>
                   <Route exact path='/us/essentials' render={props =><Essentials jobData={filteredData} methods={[this.props.methods.EmploymentType, this.props.methods.ExperienceLevels, this.props.methods.CompanySize]} {...props}/>}/>
+
                   <Route exact path='/us/methodology' render={props =><Methodology jobData={filteredData} methods={[this.props.methods.BuildServers, this.props.methods.CodeAnalysisTools, this.props.methods.VersionControlSystem, this.props.methods.IssueTrackers]} {...props}/>}/>
+
+                  <Route exact path='/us/specs' render={props =><Specs jobData={filteredData} methods={[this.props.methods.BuildServers, this.props.methods.CodeAnalysisTools, this.props.methods.VersionControlSystem, this.props.methods.IssueTrackers]} {...props}/>}/>
+
                 </Switch>
             </div>
 

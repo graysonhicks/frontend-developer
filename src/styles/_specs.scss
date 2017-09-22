@@ -1,0 +1,15 @@
+.specs {
+}
+.specs-items {
+  font-size: 40px;
+  color: $color-titan-white;
+  font-family: 'Gotham';
+  display: inline-block;
+  width: 33%;
+  float: right;
+
+  .specs-heading {
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+}

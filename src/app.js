@@ -5,8 +5,6 @@ import App from './components/App';
 
 import Data from "./data/index";
 
-console.log(Data);
-
 render((
   <HashRouter>
     <App jobData={Data.JobData} methods={Data}/>
