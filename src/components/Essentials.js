@@ -1,7 +1,5 @@
 import React, {Component} from "react";
 
-import Box from "./Box";
-
 class Essentials extends Component {
   buildData() {
     const j = {
@@ -27,9 +25,10 @@ class Essentials extends Component {
     // console.log(dataChoices);
 
     return (
-      <div className="box-container">
+      <div>
+      <div className="box-row">
 
-        <div className="box flex-1">
+        <div className="box">
           <div className="box-heading">
             {cleanData.companysize}
 
@@ -42,33 +41,38 @@ class Essentials extends Component {
           </div>
 
         </div>
+        </div>
+          <div className="box-row">
 
-        <div className="box flex-2">
+        <div className="box">
           <div className="box-heading">
             {cleanData.experience[0]}
           </div>
 
         </div>
 
-        <div className="box flex-1">
+        <div className="box">
           <div className="box-heading">
             {cleanData.locations}
           </div>
 
         </div>
-        <div className="box flex-2">
+        <div className="box">
+          <div className="box-heading">
+            {cleanData.locations}
+          </div>
+          </div>
+
+        </div>
+        <div className="box-row">
+        <div className="box">
           <div className="box-heading">
             {cleanData.locations}
           </div>
 
         </div>
-        <div className="box flex-3">
-          <div className="box-heading">
-            {cleanData.locations}
-          </div>
 
-        </div>
-
+      </div>
       </div>
     )
   }
