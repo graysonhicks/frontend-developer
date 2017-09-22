@@ -1,28 +1,40 @@
 import React, {Component} from "react";
-import { Switch, Route } from 'react-router-dom';
-import StartScreen from "./StartScreen";
+
+
+import { Redirect } from 'react-router-dom';
 import { Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 import Box from "./Box";
+import Left from "./Left";
+import HomeLink from "./HomeLink";
+
 
 
 class Info extends Component {
+  filterData(){
 
+    return {...this.props.jobData[this.props.match.params.category]};
+
+  }
   render() {
-    return (
-      <Col className="info-container" xs={10}>
-        <div className={!this.props.info ? 'main-info none' : 'main-info ' + this.props.label}>
-          <div className="category-label">
-            {this.props.label}
+    const filteredData = this.filterData();
+
+    return ((Object.keys(filteredData).length === 0) ? (<Redirect from="/" to="/nope"/ >) : (
+      <div>
+        <Left jobData={this.props.jobData}></Left>
+        <Col className="info-container" xs={10}>
+          <HomeLink/>
+          <div className="">
+            <div className="category-label">
+              {this.props.match.params.category}
+            </div>
+            <div className="category-info">
+            </div>
           </div>
-          <div className="category-info">
-            <Switch>
-              <Route exact path='/' component={StartScreen}/>
-              <Route path='/*' render={props =><Box jobData={this.props.jobData} {...props}/>}/>
-            </Switch>
-          </div>
-        </div>
-      </Col>
-    )
+        </Col>
+      </div>
+    ))
   }
 }
 

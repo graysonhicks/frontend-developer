@@ -16,7 +16,7 @@ class LeftItem extends Component {
   render() {
 
     return (
-      <Link to={{pathname: '/' + this.props.label}} className="categories-item">
+      <Link to={{pathname: '/us/' + this.props.label}} className="categories-item">
         {this.icons[this.props.index]}
         {this.props.label}
       </Link>
