@@ -8,30 +8,18 @@ class Profile extends Component {
     };
     return j;
   }
-  buildChoices() {
-    const c = {};
-    for (var i = 0; i < this.props.methods.length; i++) {
-      c[this.props.methods[i].name] = this.props.methods[i]().all.map((item) => {
-        return item.match(/[A-Z][a-z]+|[0-9]+/g).join(" ");
-      });
-    }
-    return c;
-  }
 
   render() {
     const cleanData = this.buildData();
-    console.log(cleanData);
-    const dataChoices = this.buildChoices();
-    // console.log(dataChoices);
 
     return (
-    <div className="profile">
+    <div className="profile box-row">
 
         {Object.keys(cleanData).map((item, index) => {
           return (
-            <div className="profile-items">
-              <div className="profile-heading">{item}:</div>
-              <div>{cleanData[item]}</div>
+            <div key={index} className="profile-items box">
+              <div className="profile-heading box-heading">{item}:</div>
+              <div className="box-description">{cleanData[item]}</div>
             </div>
           )
         })}

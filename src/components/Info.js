@@ -9,6 +9,7 @@ import HomeLink from "./HomeLink";
 import Essentials from "./Essentials";
 import Methodology from "./Methodology";
 import Specs from "./Specs";
+import Profile from "./Profile";
 
 class Info extends Component {
   filterData(){
@@ -33,6 +34,8 @@ class Info extends Component {
                   <Route exact path='/us/methodology' render={props =><Methodology jobData={filteredData} methods={[this.props.methods.BuildServers, this.props.methods.CodeAnalysisTools, this.props.methods.VersionControlSystem, this.props.methods.IssueTrackers]} {...props}/>}/>
 
                   <Route exact path='/us/specs' render={props =><Specs jobData={filteredData} methods={[this.props.methods.ScheduleOptions, this.props.methods.RemoteWorking, this.props.methods.PTO]} {...props}/>}/>
+
+                  <Route exact path='/us/profile' render={props =><Profile jobData={filteredData} {...props}/>}/>
 
                 </Switch>
             </div>
