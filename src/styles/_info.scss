@@ -1,0 +1,56 @@
+.category-label {
+  font-family: $font-futura;
+  font-size: 5rem;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.info-container {
+  background-color: $color-black-rock;
+  color: $color-titan-white;
+}
+
+.category-info,
+.info-container {
+  min-height: 100vh;
+}
+
+.box-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: $color-black-rock;
+}
+
+.box {
+  display: flex;
+  min-width: 20%;
+  margin: 10px;
+  padding: 7.5px;
+  height: 200px;
+  background-color: $color-titan-white;
+  color: $color-torea-bay;
+
+  &.flex-1 {
+    flex-grow: 1;
+    background-color: $color-heliotrope;
+  }
+
+  &.flex-2 {
+    flex-grow: 2;
+  }
+
+  &.flex-3 {
+    flex-grow: 3;
+    background-color: $color-french-pass;
+  }
+
+  &.flex-3 {
+    flex-grow: 3;
+  }
+
+  .box-heading {
+    font-family: 'Gotham Medium';
+    color: $color-black-rock;
+  }
+}

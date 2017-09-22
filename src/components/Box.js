@@ -1,17 +1,12 @@
 import React, {Component} from "react";
 
-const Box = (props) => {
+class Box extends Component {
 
-
-console.log(props);
+  render() {
     return (
-      <div className="main-box">
-        Hello
-      </div>
+      <div className={'box flex-' + this.props.flexNumber}></div>
     )
-
+  }
 }
-
-
 
 export default Box;

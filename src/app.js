@@ -5,8 +5,10 @@ import App from './components/App';
 
 import Data from "./data/index";
 
+console.log(Data);
+
 render((
   <HashRouter>
-    <App jobData={Data.JobData}/>
+    <App jobData={Data.JobData} methods={Data}/>
   </HashRouter>
 ), document.getElementById('app'));
