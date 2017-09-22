@@ -1,10 +1,11 @@
 import React, {Component} from "react";
+import { Link } from 'react-router-dom';
 import {IoCube, IoErlenmeyerFlaskBubbles, IoClipboard, IoPerson, IoLaptop, IoWand, IoPizza} from 'react-icons/lib/io';
 
 class LeftItem extends Component {
   icons = [
     <IoCube className="left-icons"/>,
-    <IoErlenmeyerFlaskBubbles className="left-icons"/>, 
+    <IoErlenmeyerFlaskBubbles className="left-icons"/>,
     <IoClipboard className="left-icons"/>,
     <IoPerson className="left-icons"/>,
     <IoLaptop className="left-icons"/>,
@@ -15,10 +16,10 @@ class LeftItem extends Component {
   render() {
 
     return (
-      <div className="categories-item" onClick={(e) => this.props.changeCategory(e, this.props)}>
+      <Link to={{pathname: '/' + this.props.label}} className="categories-item">
         {this.icons[this.props.index]}
         {this.props.label}
-      </div>
+      </Link>
     )
   }
 }

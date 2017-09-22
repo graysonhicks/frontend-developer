@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-
+import { Col } from 'react-bootstrap';
 import LeftItem from "./LeftItem";
 
 class Left extends Component {
@@ -19,10 +19,11 @@ class Left extends Component {
     const listItems = this.buildList(this.props.jobData);
 
     return (
-      <div className="left">
-          {listItems}
-
-      </div>
+        <Col className="left-container" xs={2}>
+          <div className="left">
+              {listItems}
+          </div>
+        </Col>
     )
   }
 }

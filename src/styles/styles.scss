@@ -26,7 +26,9 @@ body {
   background-color: $color-titan-white;
 }
 
+@import "./left";
 @import "./startscreen";
+@import "./boxes";
 
 .main-container {
   padding: 0;
@@ -42,43 +44,6 @@ body {
   // animation: spin 4s ease-in-out 1s infinite;
 }
 
-.left-container {
-  padding-left: 0;
-  padding-right: 0;
-  background-color: $color-titan-white;
-  color: $color-black-rock;
-  height: 100vh;
-}
-
-.left {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.categories-item {
-  text-transform: capitalize;
-  flex: 1;
-  display: flex;
-  font-family: 'Gotham Light';
-  align-items: center;
-  letter-spacing: 3px;
-  padding-left: 15px;
-  padding-right: 15px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 1.75rem;
-  transition: background-color .7s;
-
-  &:hover,
-  &:focus {
-    background-color: $color-malibu;
-  }
-
-  .left-icons {
-    margin-right: 15px;
-  }
-}
 
 .category-label {
   font-family: $font-futura;
