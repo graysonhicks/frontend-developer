@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-
 import {IoCheckmarkCircled, IoThumbsDown} from "react-icons/lib/io";
-class Specs extends Component {
+
+class Profile extends Component {
   buildData() {
     const j = {
       ...this.props.jobData
@@ -20,25 +20,18 @@ class Specs extends Component {
 
   render() {
     const cleanData = this.buildData();
-    // console.log(cleanData);
+    console.log(cleanData);
     const dataChoices = this.buildChoices();
-    console.log(dataChoices);
+    // console.log(dataChoices);
 
     return (
-    <div className="specs">
+    <div className="profile">
 
         {Object.keys(cleanData).map((item, index) => {
           return (
-            <div className="specs-items">
-              <div className="specs-heading">{item}:</div>
-              {dataChoices.PTO.map((tool) => {
-                if(tool.replace(/\s/g, "") == cleanData.pto){
-                  return <div>{tool} <IoCheckmarkCircled/></div>
-                } else {
-                  return <div>{tool}</div>
-                }
-
-              })}
+            <div className="profile-items">
+              <div className="profile-heading">{item}:</div>
+              <div>{cleanData[item]}</div>
             </div>
           )
         })}
@@ -47,4 +40,4 @@ class Specs extends Component {
     );
   }}
 
-  export default Specs;
+  export default Profile;

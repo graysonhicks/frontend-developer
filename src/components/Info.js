@@ -32,7 +32,7 @@ class Info extends Component {
 
                   <Route exact path='/us/methodology' render={props =><Methodology jobData={filteredData} methods={[this.props.methods.BuildServers, this.props.methods.CodeAnalysisTools, this.props.methods.VersionControlSystem, this.props.methods.IssueTrackers]} {...props}/>}/>
 
-                  <Route exact path='/us/specs' render={props =><Specs jobData={filteredData} methods={[this.props.methods.BuildServers, this.props.methods.CodeAnalysisTools, this.props.methods.VersionControlSystem, this.props.methods.IssueTrackers]} {...props}/>}/>
+                  <Route exact path='/us/specs' render={props =><Specs jobData={filteredData} methods={[this.props.methods.ScheduleOptions, this.props.methods.RemoteWorking, this.props.methods.PTO]} {...props}/>}/>
 
                 </Switch>
             </div>
