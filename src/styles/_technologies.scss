@@ -1,0 +1,9 @@
+.equipment {
+  .box {
+    flex: 0;
+  }
+  .box.framework,
+  .box.testing {
+    flex-grow: 2;
+  }
+}

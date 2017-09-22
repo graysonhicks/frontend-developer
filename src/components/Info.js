@@ -11,6 +11,7 @@ import Methodology from "./Methodology";
 import Specs from "./Specs";
 import Profile from "./Profile";
 import Equipment from "./Equipment";
+import Technologies from "./Technologies";
 
 class Info extends Component {
   filterData(){
@@ -39,6 +40,8 @@ class Info extends Component {
                   <Route exact path='/us/profile' render={props =><Profile jobData={filteredData} {...props}/>}/>
 
                   <Route exact path='/us/equipment' render={props =><Equipment jobData={filteredData} methods={[this.props.methods.OperationSystems, this.props.methods.MachineType]} {...props}/>}/>
+
+                  <Route exact path='/us/technologies' render={props =><Technologies jobData={filteredData} methods={[this.props.methods.Level]} {...props}/>}/>
 
 
                 </Switch>
