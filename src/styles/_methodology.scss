@@ -1,25 +1,67 @@
 .methodology {
-  .box {
-    height: 100%;
-
-  }
-
-  .box-row {
-    height: 40vh;
-    padding-bottom: 10px;
-  }
 
   .methodology-descriptions {
     color: $color-black-rock;
-
   }
 
   .checkbox-container {
     font-size: 24px;
+    height: 300px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    .daytoday {
+      width: 30%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $color-congress-blue;
+      font-size: 3rem;
+      font-family: 'Gotham';
+      color: $color-titan-white;
+    }
+    .checkboxes {
+      width: 70%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+
+      .box-heading {
+        text-align: left;
+        flex: 1;
+
+      }
+
+      .methodology-checks {
+        color: $color-black-rock;
+      }
+    }
   }
 
-  .methodology-checks {
-    color: $color-black-rock;
-    float: right;
+
+
+  .code-analysis {
+    thead {
+      background-color: $color-heliotrope;
+    }
+  }
+
+  .issue-tracker {
+    thead {
+      background-color: $color-pigment-indigo;
+    }
+  }
+
+  .build-servers {
+    thead {
+      background-color: $color-flirt;
+    }
+  }
+  .version-control {
+    thead {
+      background-color: $color-rose-of-sharon;
+    }
   }
 }
