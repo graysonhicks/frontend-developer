@@ -2,8 +2,8 @@ const JobData = {
 	"headline": "Gridium Front-end Developer",
 	"essentials": {
 		"locations": "denver",
-        "employment": EmploymentType().Permanent,
-        "experience": [ExperienceLevels().Junior, ExperienceLevels().Seasoned],
+    "employment": EmploymentType().Permanent,
+    "experience": [ExperienceLevels().Junior, ExperienceLevels().Seasoned],
 		"startdate": (new Date()).getTime(),
 		"companysize": CompanySize().TenToTwenty,
 		"teamsize": { "min": 1, "max": 6 },
