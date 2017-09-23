@@ -1,112 +1,108 @@
 import React, {Component} from "react";
 import {IoCheckmarkCircled, IoThumbsDown} from "react-icons/lib/io";
+import {Bar} from 'react-chartjs-2';
 
 class Technologies extends Component {
   buildData() {
     let j = {
       ...this.props.jobData
     };
-    j = this.getOneOfs(j);
+
     return j;
   }
-  buildChoices() {
-    let c = {};
-
-    for (var i = 0; i < this.props.methods.length; i++) {
-      c[this.props.methods[i].name] = this.props.methods[i]().all.map((item) => {
-        // fix circleci here, because to back to back uppercase getting caught and replaced
-        return item.match(/[A-Z][a-z]+|[0-9]+/g).join(" ");
-      });
-    }
-
-    return c;
-  }
-
-  determineTool(item, dataChoices, cleanData) {
-    let choices;
-    switch (item) {
-      case "testing":
-        let testingChoices = [];
-        for (var i = 0; i < cleanData.testing.length; i++) {
-          for (var k in cleanData.testing[i]) {
-            if (cleanData.testing[i].hasOwnProperty(k)) {
-              testingChoices.push(
-                <div key={i}>{k}
-                  : {cleanData.testing[i][k]}</div>
-              );
-            }
-          }
-
-        }
-        return testingChoices;
-      case "framework":
-        let frameworkChoices = [];
-        for (var i = 0; i < cleanData.framework.length; i++) {
-          for (var k in cleanData.framework[i]) {
-            if (cleanData.framework[i].hasOwnProperty(k)) {
-              frameworkChoices.push(
-                <div key={i}>{k}
-                  : {cleanData.framework[i][k]}</div>
-              );
-            }
-          }
-
-        }
-        return frameworkChoices;
-      default:
-        choices = dataChoices.Level.map((tool, index) => {
-
-          if (tool.replace(/\s/g, "") == cleanData[item]) {
-            return <div key={index}>{tool}
-              <IoCheckmarkCircled/></div>
-          } else {
-            return <div key={index}>{tool}</div>
-          }
-
-        });
-        return choices;
-
-    }
-  }
-
-  getOneOfs(obj) {
-    Object.keys(obj).map((item) => {
-      let tempArray = [];
-      if (obj[item].hasOwnProperty('oneof')) {
-        Object.keys(obj[item]["oneof"]).map((key, index) => {
-          const tempObj = {};
-          tempObj[key] = obj[item]["oneof"][key];
-          tempArray.push(tempObj);
-        })
-        obj[item] = tempArray;
+  buildChartData(category){
+    let chartData;
+    if(category == "language"){
+      chartData = {
+        ...this.props.jobData
       }
+      delete chartData.testing;
+      delete chartData.framework;
+    } else {
+      chartData = {
+        ...this.props.jobData[category].oneof
+      }
+    }
 
-    })
-    return obj;
+    const colors = [
+      '#ff8700', '#ffec00', '#2012ab', '#4a0099', '#ff6384', '#aaff00', '#ab009a', '#bd80ff'
+    ]
+
+    chartData = {
+       labels: Object.keys(chartData).map((item, index) => {
+         return item.replace(/\b\w/g, l => l.toUpperCase())
+       }),
+       datasets: [{
+           backgroundColor: colors,
+           borderColor: colors,
+           data: Object.keys(chartData).map((item, index) => {
+             switch (chartData[item]) {
+               case "Familiar":
+                 return 1
+                 break;
+               case "Good":
+                 return 2
+                 break;
+               case "Expert":
+                 return 3
+                 break;
+             }
+
+           }),
+       }]
+   }
+   return chartData;
+  }
+
+  chartOptions = {
+  legend:{
+    display:false
+  },
+  scales: {
+      yAxes: [{
+          ticks: {
+              beginAtZero:true,
+              fontColor: "white",
+              fontFamily: "Gotham",
+              fontSize: 16,
+              stepSize: 1,
+              max: 3,
+              callback: function (label, index, labels) {
+              switch (label) {
+                case 1:
+                  return "Familiar"
+                  break;
+                case 2:
+                  return "Good"
+                  break;
+                case 3:
+                  return "Expert"
+                  break;
+                  }
+                }
+              },
+          }],
+          xAxes: [{
+              ticks: {
+                  fontColor: "white",
+                  fontFamily: "Gotham",
+                  fontSize: 16
+              }
+          }],
+      }
   }
 
   render() {
+    const languageData = this.buildChartData("language");
+    const testingData = this.buildChartData("testing");
+    const frameworkData = this.buildChartData("framework");
     const cleanData = this.buildData();
-    console.log(cleanData);
-    const dataChoices = this.buildChoices();
-    console.log(dataChoices);
 
     return (
       <div className="technologies">
-        <div className="box-row">
-          {Object.keys(cleanData).map((item, index) => {
-            return (
-              <div key={index} className={"box " + item}>
-                <div className="box-heading">
-                  {item}
-                </div>
-                {this.determineTool(item, dataChoices, cleanData)}
-              </div>
-            )
-
-          })}
-
-        </div>
+        <Bar data={languageData} options={this.chartOptions}/>
+        <Bar data={testingData} options={this.chartOptions}/>
+        <Bar data={frameworkData} options={this.chartOptions}/>
       </div>
     )
   }

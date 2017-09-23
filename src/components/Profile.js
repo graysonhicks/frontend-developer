@@ -36,9 +36,9 @@ class Profile extends Component {
     return (
     <div className="profile">
       <Bar data={cleanData} options={{
-      legend:{
-        display:false
-      },
+        legend:{
+          display:false
+        },
          scales: {
             xAxes: [{
                 ticks: {
