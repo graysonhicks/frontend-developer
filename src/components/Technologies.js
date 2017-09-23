@@ -31,7 +31,7 @@ class Technologies extends Component {
           for (var k in cleanData.testing[i]) {
             if (cleanData.testing[i].hasOwnProperty(k)) {
               testingChoices.push(
-                <div>{k}
+                <div key={i}>{k}
                   : {cleanData.testing[i][k]}</div>
               );
             }
@@ -45,7 +45,7 @@ class Technologies extends Component {
           for (var k in cleanData.framework[i]) {
             if (cleanData.framework[i].hasOwnProperty(k)) {
               frameworkChoices.push(
-                <div>{k}
+                <div key={i}>{k}
                   : {cleanData.framework[i][k]}</div>
               );
             }
@@ -54,13 +54,13 @@ class Technologies extends Component {
         }
         return frameworkChoices;
       default:
-        choices = dataChoices.Level.map((tool) => {
+        choices = dataChoices.Level.map((tool, index) => {
 
           if (tool.replace(/\s/g, "") == cleanData[item]) {
-            return <div>{tool}
+            return <div key={index}>{tool}
               <IoCheckmarkCircled/></div>
           } else {
-            return <div>{tool}</div>
+            return <div key={index}>{tool}</div>
           }
 
         });
@@ -94,9 +94,9 @@ class Technologies extends Component {
     return (
       <div className="equipment">
         <div className="box-row">
-          {Object.keys(cleanData).map((item) => {
+          {Object.keys(cleanData).map((item, index) => {
             return (
-              <div className={"box " + item}>
+              <div key={index} className={"box " + item}>
                 <div className="box-heading">
                   {item}
                 </div>

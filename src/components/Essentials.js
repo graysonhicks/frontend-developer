@@ -41,11 +41,11 @@ class Essentials extends Component {
           })
           return employmentChoices;
         case "experience":
-            let experienceChoices = dataChoices.ExperienceLevels.map((tool) => {
+            let experienceChoices = dataChoices.ExperienceLevels.map((tool, index) => {
                 if(cleanData.experience.indexOf(tool) > -1){
-                  return <div>{tool} <IoCheckmarkCircled/></div>
+                  return <div key={index}>{tool} <IoCheckmarkCircled/></div>
                 } else {
-                  return <div>{tool}</div>
+                  return <div key={index}>{tool}</div>
                 }
               })
               return experienceChoices;

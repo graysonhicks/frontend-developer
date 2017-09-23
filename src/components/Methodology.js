@@ -34,11 +34,11 @@ class Methodology extends Component {
         <div className="box">
           <div className="box-heading">Static Code Analysis</div>
           <div className="methodology-descriptions">
-            {dataChoices.CodeAnalysisTools.map((tool) => {
+            {dataChoices.CodeAnalysisTools.map((tool, index) => {
               if(tool.replace(/\s/g, "") == cleanData.staticcodeanalysis){
-                return <div>{tool} <IoCheckmarkCircled/></div>
+                return <div key={index}>{tool} <IoCheckmarkCircled/></div>
               } else {
-                return <div>{tool}</div>
+                return <div key={index}>{tool}</div>
               }
 
             })}
@@ -47,11 +47,11 @@ class Methodology extends Component {
         <div className="box flex-2 pigment-indigo">
           <div className="box-heading">Issue Tracker</div>
           <div className="methodology-descriptions">
-                {dataChoices.IssueTrackers.map((tool) => {
+                {dataChoices.IssueTrackers.map((tool, index) => {
                     if(tool.replace(/\s/g, "") == cleanData.issuetracker){
-                      return <div>{tool} <IoCheckmarkCircled/></div>
+                      return <div key={index}>{tool} <IoCheckmarkCircled/></div>
                     } else {
-                      return <div>{tool}</div>
+                      return <div key={index}>{tool}</div>
                     }
 
                 })}
@@ -61,11 +61,11 @@ class Methodology extends Component {
           <div className="box-heading">Build Server</div>
           <div className="methodology-descriptions">
 
-                {dataChoices.BuildServers.map((tool) => {
+                {dataChoices.BuildServers.map((tool, index) => {
                   if(tool.replace(/\s/g, "") == cleanData.buildserver){
-                    return <div>{tool} <IoCheckmarkCircled/></div>
+                    return <div key={index}>{tool} <IoCheckmarkCircled/></div>
                   } else {
-                    return <div>{tool}</div>
+                    return <div key={index}>{tool}</div>
                   }
 
                 })}
@@ -74,11 +74,11 @@ class Methodology extends Component {
         <div className="box">
           <div className="box-heading">Version Control</div>
           <div className="methodology-descriptions">
-                {dataChoices.VersionControlSystem.map((tool) => {
+                {dataChoices.VersionControlSystem.map((tool, index) => {
                   if(tool.replace(/\s/g, "") == cleanData.versioncontrol){
-                    return <div>{tool} <IoCheckmarkCircled/></div>
+                    return <div key={index}>{tool} <IoCheckmarkCircled/></div>
                   } else {
-                    return <div>{tool}</div>
+                    return <div key={index}>{tool}</div>
                   }
 
                 })}

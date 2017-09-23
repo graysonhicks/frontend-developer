@@ -35,11 +35,11 @@ class Equipment extends Component {
             <div className="box-heading">
               Operating Systems
             </div>
-            {dataChoices.OperationSystems.map((tool) => {
+            {dataChoices.OperationSystems.map((tool, index) => {
               if(tool.replace(/\s/g, "") == cleanData.operatingsystem){
-                return <div>{tool} <IoCheckmarkCircled/></div>
+                return <div key={index}>{tool} <IoCheckmarkCircled/></div>
               } else {
-                return <div>{tool}</div>
+                return <div key={index}>{tool}</div>
               }
 
             })}
@@ -48,11 +48,11 @@ class Equipment extends Component {
                   <div className="box-heading">
                     Machine Type
                   </div>
-                  {dataChoices.MachineType.map((tool) => {
+                  {dataChoices.MachineType.map((tool, index) => {
                     if(tool.replace(/\s/g, "") == cleanData.computer){
-                      return <div>{tool} <IoCheckmarkCircled/></div>
+                      return <div key={index}>{tool} <IoCheckmarkCircled/></div>
                     } else {
-                      return <div>{tool}</div>
+                      return <div key={index}>{tool}</div>
                     }
 
                   })}
