@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {IoCheckmarkCircled, IoThumbsDown} from "react-icons/lib/io";
+import { Row, Col } from 'react-bootstrap';
 import {Bar} from 'react-chartjs-2';
 
 class Technologies extends Component {
@@ -32,6 +33,7 @@ class Technologies extends Component {
        labels: Object.keys(chartData).map((item, index) => {
          return item.replace(/\b\w/g, l => l.toUpperCase())
        }),
+       maintainAspectRatio: false,
        datasets: [{
            backgroundColor: colors,
            borderColor: colors,
@@ -58,6 +60,7 @@ class Technologies extends Component {
   legend:{
     display:false
   },
+  maintainAspectRatio: false,
   scales: {
       yAxes: [{
           ticks: {
@@ -100,9 +103,30 @@ class Technologies extends Component {
 
     return (
       <div className="technologies">
-        <Bar data={languageData} options={this.chartOptions}/>
-        <Bar data={testingData} options={this.chartOptions}/>
-        <Bar data={frameworkData} options={this.chartOptions}/>
+        <Row className="chart-rows">
+          <Col xs={12}><div className="chart-headings">Languages</div></Col>
+          <Col className="chart-cols" xs={12}>
+
+              <Bar className="charts" data={languageData} options={this.chartOptions}  height={300}/>
+          </Col>
+        </Row>
+        <Row className="chart-rows">
+          <Col md={6}><div className="chart-headings">Testing</div></Col>
+          <Col md={6}><div className="chart-headings">Frameworks</div></Col>
+        </Row>
+        <Row className="chart-rows">
+          <Col className="chart-cols" md={6}>
+            <Bar className="charts" data={testingData} options={this.chartOptions}  height={300}/>
+          </Col>
+          <Col className="chart-cols" md={6}>
+            <Bar className="charts" data={frameworkData} options={this.chartOptions} height={300}/>
+          </Col>
+        </Row>
+
+
+
+
+
       </div>
     )
   }
