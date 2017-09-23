@@ -26,33 +26,33 @@ class Technologies extends Component {
     let choices;
     switch (item) {
       case "testing":
+        let testingChoices = [];
         for (var i = 0; i < cleanData.testing.length; i++) {
-          console.log(cleanData.testing[i]);
-          choices = dataChoices.Level.map((tool) => {
-
-            if (tool.replace(/\s/g, "") == cleanData[item]) {
-              return <div>{tool}
-                <IoCheckmarkCircled/></div>
-            } else {
-              return <div>{tool}</div>
+          for (var k in cleanData.testing[i]) {
+            if (cleanData.testing[i].hasOwnProperty(k)) {
+              testingChoices.push(
+                <div>{k}
+                  : {cleanData.testing[i][k]}</div>
+              );
             }
-          })
+          }
+
         }
-        return choices;
+        return testingChoices;
       case "framework":
-        for (var i = 0; i < cleanData.testing.length; i++) {
-          console.log(cleanData.testing[i]);
-          choices = dataChoices.Level.map((tool) => {
-
-            if (tool.replace(/\s/g, "") == cleanData[item]) {
-              return <div>{tool}
-                <IoCheckmarkCircled/></div>
-            } else {
-              return <div>{tool}</div>
+        let frameworkChoices = [];
+        for (var i = 0; i < cleanData.framework.length; i++) {
+          for (var k in cleanData.framework[i]) {
+            if (cleanData.framework[i].hasOwnProperty(k)) {
+              frameworkChoices.push(
+                <div>{k}
+                  : {cleanData.framework[i][k]}</div>
+              );
             }
-          })
+          }
+
         }
-        return choices;
+        return frameworkChoices;
       default:
         choices = dataChoices.Level.map((tool) => {
 
