@@ -23,7 +23,7 @@
    flex-wrap: wrap;
    align-content: flex-start;
    margin-left: -10px;
-  background-color: $color-black-rock;
+   background-color: $color-black-rock;
 }
 
 .box {
@@ -33,8 +33,34 @@
   background-color: $color-titan-white;
   position: relative;
   font-family: 'Gotham Light';
-  color: $color-torea-bay;
+  color: $color-black-rock;
   flex-grow: 1;
+  text-align: center;
+
+  &.table-box {
+    padding: 0px;
+    height: auto;
+  }
+
+  & .table {
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-right: -1px;
+    border: none;
+
+    & thead {
+      color: $color-titan-white;
+      font-family: 'Gotham';
+    }
+
+    & td {
+    font-size: 18px;
+    }
+  }
+
+  & .table {
+    margin-bottom: 0px;
+  }
 
   &.flex-2 {
     flex-grow: 2;
@@ -72,5 +98,6 @@
   .box-heading {
     font-family: 'Gotham Medium';
     color: $color-black-rock;
+    font-size: 2rem;
   }
 }

@@ -1,0 +1,39 @@
+.essentials {
+
+  .team-size,
+  .startdate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .team-size {
+        .box-description {
+          font-size: 6rem;
+        }
+  }
+
+.startdate {
+      .box-description {
+        font-size: 3rem;
+      }
+}
+  .experience {
+    thead {
+      background-color: $color-heliotrope;
+    }
+  }
+
+  .employment-type {
+    thead {
+      background-color: $color-melrose;
+    }
+  }
+
+  .company-size {
+    thead {
+      background-color: $color-rose-of-sharon;
+    }
+  }
+}
