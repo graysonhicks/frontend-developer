@@ -24,7 +24,7 @@ class Info extends Component {
     return ((Object.keys(filteredData).length === 0) ? (<Redirect from="/" to="/nope"/ >) : (
       <div>
         <Left jobData={this.props.jobData}></Left>
-        <Col className="info-container" xs={10}>
+        <Col className="info-container" md={10}>
           <HomeLink/>
 
             <div className="category-label">

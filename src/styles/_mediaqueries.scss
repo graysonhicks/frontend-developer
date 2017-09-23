@@ -1,0 +1,22 @@
+@media (max-width: 991px) {
+  .left-container {
+    height: auto;
+  }
+  .left {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .categories-item {
+    flex: 0;
+    padding: 10px;
+  }
+
+  .category-label {
+    height: auto;
+  }
+ }

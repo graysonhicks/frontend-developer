@@ -19,7 +19,7 @@ class Left extends Component {
     const listItems = this.buildList(this.props.jobData);
 
     return (
-        <Col className="left-container" xs={2}>
+        <Col className="left-container" md={2}>
           <div className="left">
               {listItems}
           </div>
