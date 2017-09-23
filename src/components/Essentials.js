@@ -19,51 +19,6 @@ class Essentials extends Component {
     return c;
   }
 
-    determineTool(item, dataChoices, cleanData){
-      let choices;
-      switch (item) {
-        case "companysize":
-          let companySizeChoices = dataChoices.CompanySize.map((tool, index) => {
-            if(cleanData.companysize.indexOf(tool) > -1){
-              return (<div key={index}>{tool} <IoCheckmarkCircled/></div>)
-            } else {
-              return <div key={index}>{tool}</div>
-            }
-          })
-          return companySizeChoices;
-        case "employment":
-          let employmentChoices = dataChoices.EmploymentType.map((tool, index) => {
-            if(tool.replace(/\s/g, "") == cleanData.employment){
-              return <div key={index}>{tool} <IoCheckmarkCircled/></div>
-            } else {
-              return <div key={index}>{tool}</div>
-            }
-          })
-          return employmentChoices;
-        case "experience":
-            let experienceChoices = dataChoices.ExperienceLevels.map((tool, index) => {
-                if(cleanData.experience.indexOf(tool) > -1){
-                  return <div key={index}>{tool} <IoCheckmarkCircled/></div>
-                } else {
-                  return <div key={index}>{tool}</div>
-                }
-              })
-              return experienceChoices;
-        case "locations":
-            return <div>{cleanData.locations}</div>
-          break;
-        case "teamsize":
-            return <div>{cleanData.teamsize.min} to {cleanData.teamsize.max}</div>
-          break;
-          case "startdate":
-              return <div>{cleanData.startdate}</div>
-            break;
-        default:
-
-      }
-    }
-
-
   render() {
     const cleanData = this.buildData();
     console.log(cleanData);
@@ -71,19 +26,56 @@ class Essentials extends Component {
      console.log(dataChoices);
 
     return (
-      <div>
-      <div className="box-row">
+      <div className="essentials">
+        <div className="box-row">
+          <div className="box locations">
+            <div className="box-heading">Locations</div>
+            <div>{cleanData.locations}</div>
+          </div>
+          <div className="box startdate">
+            <div className="box-heading">Start Date</div>
+            <div>{cleanData.startdate}</div>
+          </div>
+        </div>
+        <div className="box-row">
+          <div className="box team-size">
+            <div className="box-heading">Team Size</div>
+            <div>{cleanData.teamsize.min} to {cleanData.teamsize.max}</div>
+          </div>
+          <div className="box experience">
+            <div className="box-heading">Experience</div>
+            {dataChoices.ExperienceLevels.map((tool, index) => {
+                if(cleanData.experience.indexOf(tool) > -1){
+                  return <div key={index}>{tool} <IoCheckmarkCircled/></div>
+                } else {
+                  return <div key={index}>{tool}</div>
+                }
+              })}
+          </div>
+        </div>
+        <div className="box-row">
+          <div className="box employment-type">
+            <div className="box-heading">Employment Type</div>
+            {dataChoices.EmploymentType.map((tool, index) => {
+              if(tool.replace(/\s/g, "") == cleanData.employment){
+                return <div key={index}>{tool} <IoCheckmarkCircled/></div>
+              } else {
+                return <div key={index}>{tool}</div>
+              }
+            })}
+          </div>
 
-        {Object.keys(cleanData).map((item, index) => {
-          return (
-            <div key={index} className="essential-items">
-              <div className="essentials-heading">{item}:</div>
-               {this.determineTool(item, dataChoices, cleanData)}
-            </div>
-          )
-        })}
-
-      </div>
+          <div className="box company-size">
+            <div className="box-heading">Company Size</div>
+            {dataChoices.CompanySize.map((tool, index) => {
+              if(cleanData.companysize.indexOf(tool) > -1){
+                return (<div key={index}>{tool} <IoCheckmarkCircled/></div>)
+              } else {
+                return <div key={index}>{tool}</div>
+              }
+            })}
+          </div>
+        </div>
       </div>
     )
   }
