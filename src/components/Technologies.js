@@ -92,7 +92,7 @@ class Technologies extends Component {
     console.log(dataChoices);
 
     return (
-      <div className="equipment">
+      <div className="technologies">
         <div className="box-row">
           {Object.keys(cleanData).map((item, index) => {
             return (
