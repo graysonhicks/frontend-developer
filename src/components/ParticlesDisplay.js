@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import Particles from 'react-particles-js';
 
 const ParticlesDisplay = ({ children, ...props }) => (
-    <Particles width={400} params={{
+    <Particles width={"auto"} params={{
       "particles": {
         "number": {
           "value": 80,

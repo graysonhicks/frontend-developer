@@ -13,7 +13,10 @@
 
   .categories-item {
     flex: 0;
-    padding: 10px;
+    min-width: 25%;
+    justify-content: center;
+    font-size: 2.5rem;
+    padding: 15px;
   }
 
   .category-label {

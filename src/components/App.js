@@ -23,7 +23,7 @@ class App extends Component {
 
     return (
 
-          <Grid className="main-container" fluid={true}>
+          <Grid fluid={true}>
               <Switch>
                 <Route exact path='/' render={props =><StartScreen jobData={this.props.jobData} {...props}/>}/>
                 <Route path='/us/:category' render={props =><Info jobData={this.props.jobData} methods={this.props.methods} {...props}/>}/>

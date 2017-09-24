@@ -34,7 +34,7 @@ class Info extends Component {
     const filteredData = this.filterData();
 
     return ((Object.keys(filteredData).length === 0) ? (<Redirect from="/" to="/nope"/ >) : (
-      <div>
+      <div className="main-container" >
         <Left jobData={this.props.jobData}></Left>
         <Col className="info-container" md={10}>
           <HomeLink/>

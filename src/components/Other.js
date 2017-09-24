@@ -22,6 +22,7 @@ class Other extends Component {
     return (
       <Fade>
         <div className="other">
+          <div className="other-heading">here's the bottom line</div>
           {this.buildOthers()}
           <h1 className="start-screen-heading"><IoAt className="at"/> Gridium</h1>
           <ParticlesDisplay/>
