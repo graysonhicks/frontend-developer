@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {IoCheckmarkCircled, IoThumbsDown} from "react-icons/lib/io";
-import {Bar} from 'react-chartjs-2';
+import {Doughnut} from 'react-chartjs-2';
 
 
 
@@ -35,25 +35,15 @@ class Profile extends Component {
 
     return (
     <div className="profile">
-      <Bar data={cleanData} options={{
-        legend:{
-          display:false
-        },
-         scales: {
-            xAxes: [{
-                ticks: {
-                    fontColor: "white",
-                    fontFamily: "Gotham",
-                    fontSize: 16
-                }
-            }],
-            yAxes: [{
-                ticks: {
-                    fontColor: "white",
-                    fontFamily: "Gotham",
-                    fontSize: 16
-                }
-            }]
+      <div className="chart-rows"><div className="chart-headings">Profile of Average Work Week</div></div>
+      <Doughnut data={cleanData} options={{
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              console.log(tooltipItem, data);
+              return data.datasets[0]["data"][tooltipItem.index] + "%" + " " + data.labels[tooltipItem.index];
+            }
+          }
         }
 
       }}/>
