@@ -4,12 +4,13 @@
   justify-content: center;
   flex-direction: column;
 
-  .other-heading {
-    margin-bottom: 75px;
-  }
 
   .start-screen-heading {
     margin-top: 30px;
+
+    .at {
+      font-size: 2rem;
+    }
   }
 
   .others-text {

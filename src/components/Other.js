@@ -3,6 +3,7 @@ import React, {Component} from "react";
 import {IoCheckmarkCircled, IoArrowDownA, IoAt} from "react-icons/lib/io";
 
 import Fade from "./Fade";
+import ParticlesDisplay from "./ParticlesDisplay";
 
 class Other extends Component {
   buildOthers(){
@@ -21,10 +22,9 @@ class Other extends Component {
     return (
       <Fade>
         <div className="other">
-          <div className="other-heading">Here's the bottom line <IoArrowDownA/></div>
           {this.buildOthers()}
-          <div className=""><IoAt /></div>
-          <h1 className="start-screen-heading">Gridium</h1>
+          <h1 className="start-screen-heading"><IoAt className="at"/> Gridium</h1>
+          <ParticlesDisplay/>
         </div>
       </Fade>
     );
