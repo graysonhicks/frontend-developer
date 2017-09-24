@@ -12,7 +12,8 @@ const ParticlesDisplay = ({ children, ...props }) => (
           }
         },
         "color": {
-          "value": "#eae8ff"
+          "value": "#eae8ff",
+          "random": true
         },
         "shape": {
           "type": "circle",

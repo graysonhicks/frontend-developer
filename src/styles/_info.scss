@@ -32,12 +32,12 @@
   height: 200px;
   background-color: $color-titan-white;
   position: relative;
-  font-family: 'Gotham Light';
+  font-family: $font-gotham-light;
   color: $color-black-rock;
   flex-grow: 1;
   text-align: center;
 
-  
+
 
   &.table-box {
     padding: 0;
@@ -52,7 +52,7 @@
 
     & thead {
       color: $color-titan-white;
-      font-family: 'Gotham';
+      font-family: $font-gotham;
     }
 
     & td {
@@ -97,7 +97,7 @@
   }
 
   .box-heading {
-    font-family: 'Gotham Medium';
+    font-family: $font-gotham-medium;
     color: $color-black-rock;
     font-size: 2rem;
   }
@@ -108,7 +108,7 @@
 
   .chart-headings {
     text-align: center;
-    font-family: 'Gotham Bold';
+    font-family: $font-gotham-bold;
     letter-spacing: 3px;
     text-decoration: underline;
     text-transform: uppercase;

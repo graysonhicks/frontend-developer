@@ -1,30 +1,18 @@
-$color-black-rock: #0e0227;
+@import "./fonts";
+@import "./colors";
+@import "./left";
+@import "./startscreen";
+@import "./info";
+@import "./boxes";
+@import "./essentials";
+@import "./methodology";
+@import "./specs";
+@import "./profile";
+@import "./equipment";
+@import "./technologies";
+@import "./other";
+@import "./mediaqueries";
 
-$color-titan-white: #eae8ff;
-$color-malibu: #80bcff;
-$color-french-pass: #bfdeff;
-$color-congress-blue: #003e82;
-$color-endeavour: #0059ba;
-$color-heliotrope: #bd80ff;
-$color-mauve: #debfff;
-$color-christalle: #34006b;
-$color-pigment-indigo: #4a0099;
-$color-melrose: #978dff;
-$color-arapawa: #160d78;
-$color-torea-bay: #2012ab;
-$color-dolly: #fff680;
-$color-shalimar: #fffabf;
-$color-buddha-gold: #b3a500;
-$color-turbo: #ffec00;
-$color-macaroni-and-cheese: #ffc380;
-$color-negroni: #ffe1bf;
-$color-rose-of-sharon: #b35f00;
-$color-flush-orange: #ff8700;
-$color-lime: #aaff00;
-$color-flirt: #ab009a;
-
-$font-futura: 'Futura', 'Arial', 'Helvetica', sans-serif;
-$font-lato: 'Lato', 'Arial', 'Helvetica', sans-serif;
 
 html,body {
   height: 100%;
@@ -40,19 +28,6 @@ body {
     padding: 0px;
   }
 }
-
-@import "./left";
-@import "./startscreen";
-@import "./info";
-@import "./boxes";
-@import "./essentials";
-@import "./methodology";
-@import "./specs";
-@import "./profile";
-@import "./equipment";
-@import "./technologies";
-@import "./other";
-@import "./mediaqueries";
 
 .main-container {
   padding: 0;
