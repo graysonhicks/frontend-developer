@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {IoCheckmarkCircled} from "react-icons/lib/io";
 import { Row, Col } from 'react-bootstrap';
 import {Bar} from 'react-chartjs-2';
 
@@ -110,14 +109,12 @@ class Technologies extends Component {
           </Col>
         </Row>
         <Row className="chart-rows">
-          <Col md={6}><div className="chart-headings">Testing</div></Col>
-          <Col md={6}><div className="chart-headings">Frameworks</div></Col>
-        </Row>
-        <Row className="chart-rows">
           <Col className="chart-cols" md={6}>
+            <div className="chart-headings">Testing</div>
             <Bar className="charts" data={testingData} options={this.chartOptions}  height={300}/>
           </Col>
           <Col className="chart-cols" md={6}>
+            <div className="chart-headings">Frameworks</div>
             <Bar className="charts" data={frameworkData} options={this.chartOptions} height={300}/>
           </Col>
         </Row>

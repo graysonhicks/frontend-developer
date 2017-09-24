@@ -12,7 +12,7 @@ const ParticlesDisplay = ({ children, ...props }) => (
           }
         },
         "color": {
-          "value": "#ffffff"
+          "value": "#eae8ff"
         },
         "shape": {
           "type": "circle",
@@ -52,7 +52,7 @@ const ParticlesDisplay = ({ children, ...props }) => (
         "line_linked": {
           "enable": true,
           "distance": 150,
-          "color": "#ffffff",
+          "color": "#eae8ff",
           "opacity": 0.4,
           "width": 1
         },

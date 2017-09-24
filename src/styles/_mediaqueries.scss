@@ -19,4 +19,25 @@
   .category-label {
     height: auto;
   }
+
+  .box-row {
+    flex-direction: column;
+  }
+
+.chart-rows {
+
+  .chart-headings {
+    font-size: 2rem;
+  }
+
+  .chart-cols {
+    margin-bottom: 30px;
+  }
+
+  .chartjs-render-monitor {
+    padding-bottom: 30px;
+  }
+
+}
+
  }

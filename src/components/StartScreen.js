@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 
 import Left from "./Left";
-import HomeLink from "./HomeLink";
 import ParticlesDisplay from "./ParticlesDisplay";
 
 import Fade from "./Fade";
