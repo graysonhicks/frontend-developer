@@ -1,6 +1,9 @@
+
 import React, {Component} from "react";
 import {IoCheckmarkCircled, IoThumbsDown} from "react-icons/lib/io";
 import { Table } from 'react-bootstrap';
+
+import Fade from "./Fade";
 
 class Equipment extends Component {
   buildData() {
@@ -15,7 +18,7 @@ class Equipment extends Component {
 
     for (var i = 0; i < this.props.methods.length; i++) {
       c[this.props.methods[i].name] = this.props.methods[i]().all.map((item) => {
-  
+
         item = item.replace(/([a-z])([A-Z])/g, '$1 $2');
         item = item.replace(/([A-Z])([A-Z][a-z])/g, '$1 $2')
         return item;
@@ -44,6 +47,7 @@ class Equipment extends Component {
       <div className="equipment">
         <div className="box-row">
             <div className="box operating-systems table-box">
+              <Fade>
                 <Table responsive>
                   <thead>
                     <tr><th>Operating Systems</th><th></th></tr>
@@ -52,8 +56,10 @@ class Equipment extends Component {
                       {this.mapAndReturnSelected(dataChoices, cleanData, "OperationSystems", "operatingsystem")}
                   </tbody>
                 </Table>
+              </Fade>
             </div>
             <div className="box machine-type table-box">
+              <Fade>
                 <Table responsive>
                   <thead>
                     <tr><th>Operating Systems</th><th></th></tr>
@@ -62,6 +68,7 @@ class Equipment extends Component {
                         {this.mapAndReturnSelected(dataChoices, cleanData, "MachineType", "computer")}
                   </tbody>
                 </Table>
+              </Fade>
             </div>
         </div>
     </div>

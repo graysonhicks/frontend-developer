@@ -3,6 +3,8 @@ import React, {Component} from "react";
 import {IoCheckmarkCircled, IoThumbsDown} from "react-icons/lib/io";
 import { Table } from 'react-bootstrap';
 
+import Fade from "./Fade";
+
 class Specs extends Component {
   buildData() {
     const j = {
@@ -38,6 +40,7 @@ class Specs extends Component {
     <div className="specs">
       <div className="box-row">
           <div className="box pto table-box">
+            <Fade>
               <Table responsive>
                 <thead>
                   <tr><th>PTO</th><th></th></tr>
@@ -46,8 +49,10 @@ class Specs extends Component {
                   {this.mapAndReturnSelected(dataChoices, cleanData, "PTO", "pto")}
                 </tbody>
               </Table>
+            </Fade>
           </div>
           <div className="box remote table-box">
+            <Fade>
               <Table responsive>
                 <thead>
                   <tr><th>Remote Working</th><th></th></tr>
@@ -56,16 +61,22 @@ class Specs extends Component {
                   {this.mapAndReturnSelected(dataChoices, cleanData, "RemoteWorking", "remote")}
                 </tbody>
               </Table>
+            </Fade>
           </div>
             <div className="box workweek">
-              <div>{cleanData.workweek} hours / week</div>
+              <Fade>
+                <div>{cleanData.workweek} hours / week</div>
+              </Fade>
             </div>
         </div>
         <div className="box-row">
           <div className="box workload">
-            <div>{cleanData.workload} Team</div>
+            <Fade>
+              <div>{cleanData.workload} Team</div>
+            </Fade>
           </div>
           <div className="box schedule table-box">
+            <Fade>
               <Table responsive>
                 <thead>
                   <tr><th>Schedule Options</th><th></th></tr>
@@ -74,6 +85,7 @@ class Specs extends Component {
                   {this.mapAndReturnSelected(dataChoices, cleanData, "ScheduleOptions", "schedule")}
                 </tbody>
               </Table>
+            </Fade>
           </div>
         </div>
     </div>
