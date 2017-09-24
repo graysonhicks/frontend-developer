@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 
 import {IoCheckmarkCircled, IoThumbsDown} from "react-icons/lib/io";
+import { Table } from 'react-bootstrap';
 
 class Specs extends Component {
   buildData() {
@@ -19,45 +20,14 @@ class Specs extends Component {
     return c;
   }
 
-  determineTool(item, dataChoices, cleanData){
-    let choices;
-    switch (item) {
-      case "pto":
-        choices = dataChoices.PTO.map((tool, index) => {
-          if(tool.replace(/\s/g, "") == cleanData.pto){
-            return <div key={index}>{tool} <IoCheckmarkCircled/></div>
-          } else {
-            return <div key={index}>{tool}</div>
-          }
-        })
-        return choices;
-      case "remote":
-        choices = dataChoices.RemoteWorking.map((tool, index) => {
-          if(tool.replace(/\s/g, "") == cleanData.remote){
-            return <div key={index}>{tool} <IoCheckmarkCircled/></div>
-          } else {
-            return <div key={index}>{tool}</div>
-          }
-        })
-        return choices;
-      case "schedule":
-        choices = dataChoices.ScheduleOptions.map((tool, index) => {
-          if(tool.replace(/\s/g, "") == cleanData.schedule){
-            return <div key={index}>{tool} <IoCheckmarkCircled/></div>
-          } else {
-            return <div key={index}>{tool}</div>
-          }
-        })
-      return choices;
-      case "workload":
-          return <div>{cleanData.workload} Team</div>
-        break;
-      case "workweek":
-          return <div>{cleanData.workweek} hours</div>
-        break;
-      default:
-
-    }
+  mapAndReturnSelected(dataChoices, cleanData, choicesKey, dataKey){
+    return dataChoices[choicesKey].map((tool, index) => {
+      if(tool.replace(/\s/g, "") == cleanData[dataKey]){
+        return <tr key={index}><td>{tool}</td><td><IoCheckmarkCircled/></td></tr>
+      } else {
+        return <tr key={index}><td>{tool}</td><td></td></tr>
+      }
+    })
   }
 
   render() {
@@ -66,16 +36,46 @@ class Specs extends Component {
 
     return (
     <div className="specs">
-
-        {Object.keys(cleanData).map((item, index) => {
-          return (
-            <div key={index} className="specs-items">
-              <div className="specs-heading">{item}:</div>
-               {this.determineTool(item, dataChoices, cleanData)}
+      <div className="box-row">
+          <div className="box pto table-box">
+              <Table responsive>
+                <thead>
+                  <tr><th>PTO</th><th></th></tr>
+                </thead>
+                <tbody>
+                  {this.mapAndReturnSelected(dataChoices, cleanData, "PTO", "pto")}
+                </tbody>
+              </Table>
+          </div>
+          <div className="box remote table-box">
+              <Table responsive>
+                <thead>
+                  <tr><th>Remote Working</th><th></th></tr>
+                </thead>
+                <tbody>
+                  {this.mapAndReturnSelected(dataChoices, cleanData, "RemoteWorking", "remote")}
+                </tbody>
+              </Table>
+          </div>
+            <div className="box workweek">
+              <div>{cleanData.workweek} hours</div>
             </div>
-          )
-        })}
-
+        </div>
+        <div className="box-row">
+          <div className="box workload">
+            <div>{cleanData.workload} Team</div>
+          </div>
+          <div className="box schedule table-box">
+              <Table responsive>
+                <thead>
+                  <tr><th>Schedule Options</th><th></th></tr>
+                </thead>
+                <tbody>
+                  {this.mapAndReturnSelected(dataChoices, cleanData, "ScheduleOptions", "schedule")}
+                </tbody>
+              </Table>
+          </div>
+        </div>
     </div>
     );
   }}
