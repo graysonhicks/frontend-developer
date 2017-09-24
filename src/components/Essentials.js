@@ -89,7 +89,7 @@ class Essentials extends Component {
                   <tr><th>Employment Type</th><th></th></tr>
                 </thead>
                 <tbody>
-                  {this.props.mapAndReturnSelected(dataChoices, cleanData, "EmploymentType", "employment")}
+                  {this.props.mapAndReturnSelected(dataChoices, cleanData, "EmploymentType", "employment")}.bind(this)
                 </tbody>
               </Table>
             </Fade>
