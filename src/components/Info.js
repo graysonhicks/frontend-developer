@@ -21,6 +21,7 @@ class Info extends Component {
     return {...this.props.jobData[this.props.match.params.category]};
   }
   mapAndReturnSelected(dataChoices, cleanData, choicesKey, dataKey){
+    console.log(arguments);
     return dataChoices[choicesKey].map((tool, index) => {
       let dataMatch = ((typeof cleanData[dataKey] == 'object') ? cleanData[dataKey][index] : cleanData[dataKey]);
       if(tool.replace(/\s/g, "") == dataMatch){
