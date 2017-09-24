@@ -32,7 +32,6 @@ class Info extends Component {
   }
   render() {
     const filteredData = this.filterData();
-
     return ((Object.keys(filteredData).length === 0) ? (<Redirect from="/" to="/nope"/ >) : (
       <div className="main-container" >
         <Left jobData={this.props.jobData}></Left>

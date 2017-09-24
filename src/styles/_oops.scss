@@ -1,0 +1,20 @@
+.oops {
+  .oops-warning {
+    color: $color-titan-white;
+    font-size: 5rem;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .oops-text {
+    color: $color-titan-white;
+    font-family: $font-gotham;
+    text-align: center;
+  }
+
+  .home-link {
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+}

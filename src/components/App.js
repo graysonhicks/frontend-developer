@@ -6,16 +6,9 @@ import { Grid, Col } from 'react-bootstrap';
 
 import Info from "./Info"
 import StartScreen from "./StartScreen";
+import Oops from "./Oops";
 
 import Styles from "../styles/styles.scss";
-
-const NoMatch = () => {
-  return (
-    <Col xs={12}>
-      <div className="404-warning">Sorry! Only so many webpages to go around!</div>
-    </Col>
-  )
-}
 
 class App extends Component {
 
@@ -27,7 +20,8 @@ class App extends Component {
               <Switch>
                 <Route exact path='/' render={props =><StartScreen jobData={this.props.jobData} {...props}/>}/>
                 <Route path='/team/:category' render={props =><Info jobData={this.props.jobData} methods={this.props.methods} {...props}/>}/>
-                <Route path="*" component={NoMatch}/>
+                <Route path="/nope" component={Oops}/>
+                <Route path="/*" component={Oops}/>
               </Switch>
           </Grid>
 
