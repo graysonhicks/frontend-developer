@@ -58,7 +58,7 @@ class Specs extends Component {
               </Table>
           </div>
             <div className="box workweek">
-              <div>{cleanData.workweek} hours</div>
+              <div>{cleanData.workweek} hours / week</div>
             </div>
         </div>
         <div className="box-row">

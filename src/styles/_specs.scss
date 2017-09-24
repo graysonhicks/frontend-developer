@@ -1,17 +1,23 @@
 .specs {
   padding-top: 15px;
-  .specs-items {
-    font-size: 40px;
-    color: $color-titan-white;
-    font-family: 'Gotham';
-    display: inline-block;
-    width: 33%;
-    float: right;
 
-    .specs-heading {
-      font-weight: bold;
-      text-transform: capitalize;
-    }
+  .workload {
+    background-color: $color-black-rock;
+    border: 1px solid $color-titan-white;
+    font-size: 3rem;
+    color: $color-titan-white;
+    font-family: 'Gotham Bold';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .workweek {
+    font-size: 3rem;
+    font-family: 'Gotham Bold';
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .schedule {
