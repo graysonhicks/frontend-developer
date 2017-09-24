@@ -27,17 +27,6 @@ class Methodology extends Component {
     return c;
   }
 
-  mapAndReturnSelected(dataChoices, cleanData, choicesKey, dataKey){
-    return dataChoices[choicesKey].map((tool, index) => {
-      let dataMatch = ((typeof cleanData[dataKey] == 'object') ? cleanData[dataKey][index] : cleanData[dataKey]);
-      if(tool.replace(/\s/g, "") == dataMatch){
-        return <tr key={index}><td>{tool}</td><td><IoCheckmarkCircled/></td></tr>
-      } else {
-        return <tr key={index}><td>{tool}</td><td></td></tr>
-      }
-    })
-  }
-
   render() {
     const cleanData = this.buildData();
     const dataChoices = this.buildChoices();
@@ -52,7 +41,7 @@ class Methodology extends Component {
                   <tr><th>Static Code Analysis</th><th></th></tr>
                 </thead>
                 <tbody>
-                    {this.mapAndReturnSelected(dataChoices, cleanData, "CodeAnalysisTools", "staticcodeanalysis")}
+                    {this.props.mapAndReturnSelected(dataChoices, cleanData, "CodeAnalysisTools", "staticcodeanalysis")}
                 </tbody>
               </Table>
             </Fade>
@@ -64,7 +53,7 @@ class Methodology extends Component {
                   <tr><th>Issue Tracker</th><th></th></tr>
                 </thead>
                 <tbody>
-                    {this.mapAndReturnSelected(dataChoices, cleanData, "IssueTrackers", "issuetracker")}
+                    {this.props.mapAndReturnSelected(dataChoices, cleanData, "IssueTrackers", "issuetracker")}
                 </tbody>
               </Table>
               </Fade>
@@ -76,7 +65,7 @@ class Methodology extends Component {
                   <tr><th>Version Control</th><th></th></tr>
                 </thead>
                 <tbody>
-                  {this.mapAndReturnSelected(dataChoices, cleanData, "VersionControlSystem", "versioncontrol")}
+                  {this.props.mapAndReturnSelected(dataChoices, cleanData, "VersionControlSystem", "versioncontrol")}
                 </tbody>
               </Table>
               </Fade>
@@ -112,7 +101,7 @@ class Methodology extends Component {
                   <tr><th>Build Servers</th><th></th></tr>
                 </thead>
                 <tbody>
-                    {this.mapAndReturnSelected(dataChoices, cleanData, "BuildServers", "buildserver")}
+                    {this.props.mapAndReturnSelected(dataChoices, cleanData, "BuildServers", "buildserver")}
                 </tbody>
               </Table>
               </Fade>

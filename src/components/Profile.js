@@ -32,7 +32,6 @@ class Profile extends Component {
   render() {
     const cleanData = this.buildData();
 
-
     return (
     <div className="profile">
       <div className="chart-rows"><div className="chart-headings">Profile of Average Work Week</div></div>

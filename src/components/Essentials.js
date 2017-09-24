@@ -24,17 +24,6 @@ class Essentials extends Component {
     return c;
   }
 
-  mapAndReturnSelected(dataChoices, cleanData, choicesKey, dataKey){
-    return dataChoices[choicesKey].map((tool, index) => {
-      if(tool.replace(/\s/g, "") == cleanData[dataKey]){
-        return <tr key={index}><td>{tool}</td><td><IoCheckmarkCircled/></td></tr>
-      } else {
-        return <tr key={index}><td>{tool}</td><td></td></tr>
-      }
-    })
-  }
-
-
   render() {
     const cleanData = this.buildData();
     const dataChoices = this.buildChoices();
@@ -103,7 +92,7 @@ class Essentials extends Component {
                   <tr><th>Employment Type</th><th></th></tr>
                 </thead>
                 <tbody>
-                  {this.mapAndReturnSelected(dataChoices, cleanData, "EmploymentType", "employment")}
+                  {this.props.mapAndReturnSelected(dataChoices, cleanData, "EmploymentType", "employment")}
                 </tbody>
               </Table>
             </Fade>
