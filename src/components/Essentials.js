@@ -70,7 +70,6 @@ class Essentials extends Component {
                 </tbody>
               </Table>
             </div>
-
         </div>
         <div className="box-row">
           <div className="box team-size">

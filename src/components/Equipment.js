@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {IoCheckmarkCircled, IoThumbsDown} from "react-icons/lib/io";
+import { Table } from 'react-bootstrap';
 
 class Equipment extends Component {
   buildData() {
@@ -14,51 +15,56 @@ class Equipment extends Component {
 
     for (var i = 0; i < this.props.methods.length; i++) {
       c[this.props.methods[i].name] = this.props.methods[i]().all.map((item) => {
-    // fix circleci here, because to back to back uppercase getting caught and replaced
-        return item.match(/[A-Z][a-z]+|[0-9]+/g).join(" ");
+  
+        item = item.replace(/([a-z])([A-Z])/g, '$1 $2');
+        item = item.replace(/([A-Z])([A-Z][a-z])/g, '$1 $2')
+        return item;
       });
     }
 
     return c;
   }
 
+    mapAndReturnSelected(dataChoices, cleanData, choicesKey, dataKey){
+      return dataChoices[choicesKey].map((tool, index) => {
+        let dataMatch = ((typeof cleanData[dataKey] == 'object') ? cleanData[dataKey][index] : cleanData[dataKey]);
+        if(tool.replace(/\s/g, "") == dataMatch){
+          return <tr key={index}><td>{tool}</td><td><IoCheckmarkCircled/></td></tr>
+        } else {
+          return <tr key={index}><td>{tool}</td><td></td></tr>
+        }
+      })
+    }
+
   render() {
     const cleanData = this.buildData();
-    console.log(cleanData);
     const dataChoices = this.buildChoices();
-    console.log(dataChoices);
 
     return (
       <div className="equipment">
         <div className="box-row">
-          <div className="box">
-            <div className="box-heading">
-              Operating Systems
+            <div className="box operating-systems table-box">
+                <Table responsive>
+                  <thead>
+                    <tr><th>Operating Systems</th><th></th></tr>
+                  </thead>
+                  <tbody>
+                      {this.mapAndReturnSelected(dataChoices, cleanData, "OperationSystems", "operatingsystem")}
+                  </tbody>
+                </Table>
             </div>
-            {dataChoices.OperationSystems.map((tool, index) => {
-              if(tool.replace(/\s/g, "") == cleanData.operatingsystem){
-                return <div key={index}>{tool} <IoCheckmarkCircled/></div>
-              } else {
-                return <div key={index}>{tool}</div>
-              }
-
-            })}
-          </div>
-                <div className="box">
-                  <div className="box-heading">
-                    Machine Type
-                  </div>
-                  {dataChoices.MachineType.map((tool, index) => {
-                    if(tool.replace(/\s/g, "") == cleanData.computer){
-                      return <div key={index}>{tool} <IoCheckmarkCircled/></div>
-                    } else {
-                      return <div key={index}>{tool}</div>
-                    }
-
-                  })}
-                </div>
+            <div className="box machine-type table-box">
+                <Table responsive>
+                  <thead>
+                    <tr><th>Operating Systems</th><th></th></tr>
+                  </thead>
+                  <tbody>
+                        {this.mapAndReturnSelected(dataChoices, cleanData, "MachineType", "computer")}
+                  </tbody>
+                </Table>
             </div>
         </div>
+    </div>
     )
   }}
 

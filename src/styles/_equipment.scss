@@ -1,0 +1,14 @@
+.equipment {
+  padding-top: 15px;
+  .machine-type {
+    thead {
+      background-color: $color-endeavour;
+    }
+  }
+
+  .operating-systems {
+    thead {
+      background-color: $color-flirt;
+    }
+  }
+}

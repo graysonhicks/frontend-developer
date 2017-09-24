@@ -15,8 +15,10 @@ class Methodology extends Component {
 
     for (var i = 0; i < this.props.methods.length; i++) {
       c[this.props.methods[i].name] = this.props.methods[i]().all.map((item) => {
-    // fix circleci here, because to back to back uppercase getting caught and replaced
-        return item.match(/[A-Z][a-z]+|[0-9]+/g).join(" ");
+        console.log(item);
+          item = item.replace(/([a-z])([A-Z])/g, '$1 $2');
+          item = item.replace(/([A-Z])([A-Z][a-z])/g, '$1 $2')
+          return item;
       });
     }
 
@@ -25,7 +27,8 @@ class Methodology extends Component {
 
   mapAndReturnSelected(dataChoices, cleanData, choicesKey, dataKey){
     return dataChoices[choicesKey].map((tool, index) => {
-      if(tool.replace(/\s/g, "") == cleanData[dataKey]){
+      let dataMatch = ((typeof cleanData[dataKey] == 'object') ? cleanData[dataKey][index] : cleanData[dataKey]);
+      if(tool.replace(/\s/g, "") == dataMatch){
         return <tr key={index}><td>{tool}</td><td><IoCheckmarkCircled/></td></tr>
       } else {
         return <tr key={index}><td>{tool}</td><td></td></tr>
@@ -57,16 +60,6 @@ class Methodology extends Component {
                 </thead>
                 <tbody>
                     {this.mapAndReturnSelected(dataChoices, cleanData, "IssueTrackers", "issuetracker")}
-                </tbody>
-              </Table>
-          </div>
-          <div className="box build-servers table-box">
-              <Table responsive>
-                <thead>
-                  <tr><th>Build Servers</th><th></th></tr>
-                </thead>
-                <tbody>
-                    {this.mapAndReturnSelected(dataChoices, cleanData, "BuildServers", "buildserver")}
                 </tbody>
               </Table>
           </div>
@@ -104,6 +97,17 @@ class Methodology extends Component {
                 <div className="box-heading ">Unit Tests {cleanData.unittests ? (<IoCheckmarkCircled className="methodology-checks"/>) : <IoThumbsDown/>}</div>
             </div>
           </div>
+          <div className="box build-servers table-box">
+              <Table responsive>
+                <thead>
+                  <tr><th>Build Servers</th><th></th></tr>
+                </thead>
+                <tbody>
+                    {this.mapAndReturnSelected(dataChoices, cleanData, "BuildServers", "buildserver")}
+                </tbody>
+              </Table>
+          </div>
+
         </div>
       </div>
     );
