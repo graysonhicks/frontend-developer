@@ -3,6 +3,7 @@ import React, {Component} from "react";
 import { Table } from 'react-bootstrap';
 
 import Fade from "./Fade";
+import {IoCheckmarkCircled} from "react-icons/lib/io";
 
 class Specs extends Component {
   buildData() {
@@ -20,6 +21,17 @@ class Specs extends Component {
     }
     return c;
   }
+    mapAndReturnSelected(dataChoices, cleanData, choicesKey, dataKey){
+      console.log(arguments);
+      return dataChoices[choicesKey].map((tool, index) => {
+        let dataMatch = ((typeof cleanData[dataKey] == 'object') ? cleanData[dataKey][index] : cleanData[dataKey]);
+        if(tool.replace(/\s/g, "") == dataMatch){
+          return <tr key={index}><td>{tool}</td><td><IoCheckmarkCircled/></td></tr>
+        } else {
+          return <tr key={index}><td>{tool}</td><td></td></tr>
+        }
+      })
+    }
 
   render() {
     const cleanData = this.buildData();
@@ -35,7 +47,7 @@ class Specs extends Component {
                   <tr><th>PTO</th><th></th></tr>
                 </thead>
                 <tbody>
-                  {this.props.mapAndReturnSelected(dataChoices, cleanData, "PTO", "pto")}
+                  {this.mapAndReturnSelected(dataChoices, cleanData, "PTO", "pto")}
                 </tbody>
               </Table>
             </Fade>
@@ -47,7 +59,7 @@ class Specs extends Component {
                   <tr><th>Remote Working</th><th></th></tr>
                 </thead>
                 <tbody>
-                  {this.props.mapAndReturnSelected(dataChoices, cleanData, "RemoteWorking", "remote")}
+                  {this.mapAndReturnSelected(dataChoices, cleanData, "RemoteWorking", "remote")}
                 </tbody>
               </Table>
             </Fade>
@@ -71,7 +83,7 @@ class Specs extends Component {
                   <tr><th>Schedule Options</th><th></th></tr>
                 </thead>
                 <tbody>
-                  {this.props.mapAndReturnSelected(dataChoices, cleanData, "ScheduleOptions", "schedule")}
+                  {this.mapAndReturnSelected(dataChoices, cleanData, "ScheduleOptions", "schedule")}
                 </tbody>
               </Table>
             </Fade>

@@ -9,7 +9,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --progress --config webpack.prod.js",
     "deploy": "gh-pages -d dist",
     "start": "webpack-dev-server --open --hot --progress --inline --config webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"

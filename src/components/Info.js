@@ -17,20 +17,11 @@ import Technologies from "./Technologies";
 import Other from "./Other";
 
 class Info extends Component {
+  
   filterData(){
     return {...this.props.jobData[this.props.match.params.category]};
   }
-  mapAndReturnSelected(dataChoices, cleanData, choicesKey, dataKey){
-    console.log(arguments);
-    return dataChoices[choicesKey].map((tool, index) => {
-      let dataMatch = ((typeof cleanData[dataKey] == 'object') ? cleanData[dataKey][index] : cleanData[dataKey]);
-      if(tool.replace(/\s/g, "") == dataMatch){
-        return <tr key={index}><td>{tool}</td><td><IoCheckmarkCircled/></td></tr>
-      } else {
-        return <tr key={index}><td>{tool}</td><td></td></tr>
-      }
-    })
-  }
+
   render() {
     const filteredData = this.filterData();
     return ((Object.keys(filteredData).length === 0) ? (<Redirect from="/" to="/nope"/ >) : (
@@ -44,15 +35,15 @@ class Info extends Component {
             </div>
             <div className="category-info">
                 <Switch>
-                  <Route exact path='/team/essentials' render={props =><Essentials mapAndReturnSelected={this.mapAndReturnSelected} jobData={filteredData} methods={[this.props.methods.EmploymentType, this.props.methods.ExperienceLevels, this.props.methods.CompanySize]} {...props}/>}/>
+                  <Route exact path='/team/essentials' render={props =><Essentials jobData={filteredData} methods={[this.props.methods.EmploymentType, this.props.methods.ExperienceLevels, this.props.methods.CompanySize]} {...props}/>}/>
 
-                  <Route exact path='/team/methodology' render={props =><Methodology mapAndReturnSelected={this.mapAndReturnSelected} jobData={filteredData} methods={[this.props.methods.BuildServers, this.props.methods.CodeAnalysisTools, this.props.methods.VersionControlSystem, this.props.methods.IssueTrackers]} {...props}/>}/>
+                  <Route exact path='/team/methodology' render={props =><Methodology jobData={filteredData} methods={[this.props.methods.BuildServers, this.props.methods.CodeAnalysisTools, this.props.methods.VersionControlSystem, this.props.methods.IssueTrackers]} {...props}/>}/>
 
-                  <Route exact path='/team/specs' render={props =><Specs mapAndReturnSelected={this.mapAndReturnSelected} jobData={filteredData} methods={[this.props.methods.ScheduleOptions, this.props.methods.RemoteWorking, this.props.methods.PTO]} {...props}/>}/>
+                  <Route exact path='/team/specs' render={props =><Specs jobData={filteredData} methods={[this.props.methods.ScheduleOptions, this.props.methods.RemoteWorking, this.props.methods.PTO]} {...props}/>}/>
 
                   <Route exact path='/team/profile' render={props =><Profile jobData={filteredData} {...props}/>}/>
 
-                  <Route exact path='/team/equipment' render={props =><Equipment mapAndReturnSelected={this.mapAndReturnSelected} jobData={filteredData} methods={[this.props.methods.OperationSystems, this.props.methods.MachineType]} {...props}/>}/>
+                  <Route exact path='/team/equipment' render={props =><Equipment jobData={filteredData} methods={[this.props.methods.OperationSystems, this.props.methods.MachineType]} {...props}/>}/>
 
                   <Route exact path='/team/technologies' render={props =><Technologies jobData={filteredData} methods={[this.props.methods.Level]} {...props}/>}/>
 
