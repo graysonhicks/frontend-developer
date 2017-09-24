@@ -106,7 +106,6 @@ class Technologies extends Component {
         <Row className="chart-rows">
           <Col xs={12}><div className="chart-headings">Languages</div></Col>
           <Col className="chart-cols" xs={12}>
-
               <Bar className="charts" data={languageData} options={this.chartOptions}  height={300}/>
           </Col>
         </Row>
@@ -122,11 +121,6 @@ class Technologies extends Component {
             <Bar className="charts" data={frameworkData} options={this.chartOptions} height={300}/>
           </Col>
         </Row>
-
-
-
-
-
       </div>
     )
   }
