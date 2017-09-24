@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {IoCheckmarkCircled, IoThumbsDown} from "react-icons/lib/io";
+import {IoCheckmarkCircled} from "react-icons/lib/io";
 import {Doughnut} from 'react-chartjs-2';
 
 

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-import {IoCheckmarkCircled, IoThumbsDown, IoArrowDownA, IoAt} from "react-icons/lib/io";
+import {IoCheckmarkCircled, IoArrowDownA, IoAt} from "react-icons/lib/io";
 
 import Fade from "./Fade";
 

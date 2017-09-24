@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import { Table } from 'react-bootstrap';
-import {IoCheckmarkCircled, IoThumbsDown} from "react-icons/lib/io";
+import {IoCheckmarkCircled} from "react-icons/lib/io";
 import moment from "moment";
 
 import Fade from "./Fade";
