@@ -3,6 +3,7 @@
     color: $color-titan-white;
     font-size: 5rem;
     text-align: center;
+    font-family: $font-gotham-bold;
     margin-top: 50px;
   }
 
@@ -16,5 +17,10 @@
     position: relative;
     top: auto;
     right: auto;
+  }
+
+  .oops-particles-container {
+    display: flex;
+    justify-content: center;
   }
 }
