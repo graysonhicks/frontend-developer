@@ -1,0 +1,19 @@
+.other {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .other-heading {
+    margin-bottom: 75px;
+  }
+
+  .start-screen-heading {
+    margin-top: 30px;
+  }
+
+  .others-text {
+    font-size: 4rem;
+    font-family: 'Gotham';
+  }
+}
