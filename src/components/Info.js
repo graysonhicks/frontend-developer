@@ -44,19 +44,19 @@ class Info extends Component {
             </div>
             <div className="category-info">
                 <Switch>
-                  <Route exact path='/us/essentials' render={props =><Essentials mapAndReturnSelected={this.mapAndReturnSelected} jobData={filteredData} methods={[this.props.methods.EmploymentType, this.props.methods.ExperienceLevels, this.props.methods.CompanySize]} {...props}/>}/>
+                  <Route exact path='/team/essentials' render={props =><Essentials mapAndReturnSelected={this.mapAndReturnSelected} jobData={filteredData} methods={[this.props.methods.EmploymentType, this.props.methods.ExperienceLevels, this.props.methods.CompanySize]} {...props}/>}/>
 
-                  <Route exact path='/us/methodology' render={props =><Methodology mapAndReturnSelected={this.mapAndReturnSelected} jobData={filteredData} methods={[this.props.methods.BuildServers, this.props.methods.CodeAnalysisTools, this.props.methods.VersionControlSystem, this.props.methods.IssueTrackers]} {...props}/>}/>
+                  <Route exact path='/team/methodology' render={props =><Methodology mapAndReturnSelected={this.mapAndReturnSelected} jobData={filteredData} methods={[this.props.methods.BuildServers, this.props.methods.CodeAnalysisTools, this.props.methods.VersionControlSystem, this.props.methods.IssueTrackers]} {...props}/>}/>
 
-                  <Route exact path='/us/specs' render={props =><Specs mapAndReturnSelected={this.mapAndReturnSelected} jobData={filteredData} methods={[this.props.methods.ScheduleOptions, this.props.methods.RemoteWorking, this.props.methods.PTO]} {...props}/>}/>
+                  <Route exact path='/team/specs' render={props =><Specs mapAndReturnSelected={this.mapAndReturnSelected} jobData={filteredData} methods={[this.props.methods.ScheduleOptions, this.props.methods.RemoteWorking, this.props.methods.PTO]} {...props}/>}/>
 
-                  <Route exact path='/us/profile' render={props =><Profile jobData={filteredData} {...props}/>}/>
+                  <Route exact path='/team/profile' render={props =><Profile jobData={filteredData} {...props}/>}/>
 
-                  <Route exact path='/us/equipment' render={props =><Equipment mapAndReturnSelected={this.mapAndReturnSelected} jobData={filteredData} methods={[this.props.methods.OperationSystems, this.props.methods.MachineType]} {...props}/>}/>
+                  <Route exact path='/team/equipment' render={props =><Equipment mapAndReturnSelected={this.mapAndReturnSelected} jobData={filteredData} methods={[this.props.methods.OperationSystems, this.props.methods.MachineType]} {...props}/>}/>
 
-                  <Route exact path='/us/technologies' render={props =><Technologies jobData={filteredData} methods={[this.props.methods.Level]} {...props}/>}/>
+                  <Route exact path='/team/technologies' render={props =><Technologies jobData={filteredData} methods={[this.props.methods.Level]} {...props}/>}/>
 
-                  <Route exact path='/us/other' render={props =><Other jobData={filteredData} {...props}/>}/>
+                  <Route exact path='/team/other' render={props =><Other jobData={filteredData} {...props}/>}/>
 
 
                 </Switch>

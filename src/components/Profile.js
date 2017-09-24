@@ -2,8 +2,6 @@ import React, {Component} from "react";
 import {IoCheckmarkCircled} from "react-icons/lib/io";
 import {Doughnut} from 'react-chartjs-2';
 
-
-
 class Profile extends Component {
   buildData() {
     let j = {
@@ -35,18 +33,17 @@ class Profile extends Component {
     return (
     <div className="profile">
       <div className="chart-rows"><div className="chart-headings">Profile of Average Work Week</div></div>
-      <Doughnut data={cleanData} options={{
-        tooltips: {
-          callbacks: {
-            label: function(tooltipItem, data) {
-              console.log(tooltipItem, data);
-              return data.datasets[0]["data"][tooltipItem.index] + "%" + " " + data.labels[tooltipItem.index];
+      <div className="chart-rows">
+        <Doughnut data={cleanData} options={{
+          tooltips: {
+            callbacks: {
+              label: function(tooltipItem, data) {
+                return data.datasets[0]["data"][tooltipItem.index] + "%" + " " + data.labels[tooltipItem.index];
+              }
             }
           }
-        }
-
-      }}/>
-
+        }}/>
+      </div>
     </div>
     );
   }}

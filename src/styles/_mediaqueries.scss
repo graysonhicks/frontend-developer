@@ -2,6 +2,7 @@
   .left-container {
     height: auto;
   }
+
   .left {
     display: flex;
     flex-direction: row;
@@ -27,20 +28,18 @@
     flex-direction: column;
   }
 
-.chart-rows {
+  .chart-rows {
+    .chart-headings {
+      font-size: 2rem;
+    }
 
-  .chart-headings {
-    font-size: 2rem;
+    .chart-cols {
+      margin-bottom: 30px;
+    }
+
+    .chartjs-render-monitor {
+      padding-bottom: 30px;
+      margin-top: 30px;
+    }
   }
-
-  .chart-cols {
-    margin-bottom: 30px;
-  }
-
-  .chartjs-render-monitor {
-    padding-bottom: 30px;
-  }
-
 }
-
- }

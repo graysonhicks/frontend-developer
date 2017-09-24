@@ -3,5 +3,9 @@
 
   .chart-rows {
     height: auto;
+
+    .chartjs-render-monitor {
+      border-bottom: none;
+    }
   }
 }

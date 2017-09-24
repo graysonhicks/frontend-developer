@@ -17,7 +17,6 @@ class Methodology extends Component {
 
     for (var i = 0; i < this.props.methods.length; i++) {
       c[this.props.methods[i].name] = this.props.methods[i]().all.map((item) => {
-        console.log(item);
           item = item.replace(/([a-z])([A-Z])/g, '$1 $2');
           item = item.replace(/([A-Z])([A-Z][a-z])/g, '$1 $2')
           return item;
