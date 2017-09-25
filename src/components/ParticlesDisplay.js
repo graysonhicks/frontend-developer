@@ -79,10 +79,6 @@ const ParticlesDisplay = ({ children, ...props }) => (
             "enable": true,
             "mode": "grab"
           },
-          "onclick": {
-            "enable": true,
-            "mode": "grab"
-          },
           "resize": true
         },
         "modes": {
