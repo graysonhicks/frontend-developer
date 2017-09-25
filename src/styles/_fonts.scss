@@ -1,0 +1,44 @@
+// 
+// @font-face {
+//   font-family: Futura;
+//   src: local("Futura"),
+//        url("../fonts/Futura.ttc");
+// }
+//
+// @font-face {
+//   font-family: Gotham;
+//   src: local("Gotham"),
+//        url("../fonts/Gotham Book Regular.otf");
+// }
+//
+// @font-face {
+//   font-family: Gotham Thin;
+//   src: local("Gotham Thin"),
+//        url("../fonts/GOTHAM THIN.ttf");
+// }
+//
+//
+// @font-face {
+//   font-family: Gotham Light;
+//   src: local("Gotham Light"),
+//        url("../fonts/GOTHAM LIGHT.otf");
+// }
+//
+// @font-face {
+//   font-family: Gotham Medium;
+//   src: local("Gotham Medium"),
+//        url("../fonts/GOTHAM MEDIUM.otf");
+// }
+//
+// @font-face {
+//   font-family: Gotham Bold;
+//   src: local("Gotham Bold"),
+//        url("../fonts/GOTHAM BOLD.otf");
+// }
+
+$font-futura: 'Futura', 'Arial', 'Helvetica', sans-serif;
+$font-gotham: 'Gotham';
+$font-gotham-thin: 'Gotham Thin';
+$font-gotham-light: 'Gotham Light';
+$font-gotham-medium: 'Gotham Medium';
+$font-gotham-bold: 'Gotham Bold';

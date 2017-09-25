@@ -1,0 +1,11 @@
+.profile {
+  padding-top: 15px;
+
+  .chart-rows {
+    height: auto;
+
+    .chartjs-render-monitor {
+      border-bottom: none;
+    }
+  }
+}

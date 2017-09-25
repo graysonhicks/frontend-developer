@@ -1,46 +1,26 @@
-# Gridium Developer Application
+# Gridium Dashboard
 
-Write some code that processes the data in `./public/js/index.js` into a cool web document. Get creative! We want to see what you can do.
+## Description
 
-## Instructions
+This challenge was a ton of fun, thank you for the opportunity! The page was built mainly with React, webpack, React Router, and Charts.js. I have had a React 'Admin Dashboard' on my todo list for a while, so I used that basic idea to display the data of a Gridium developer.
 
-Fork, Code, Submit a Pull Request
-Use the libraries or framework of your choice, show us what you know!
+It consumes the data that was provided, does some parsing at the app level, and some more category specific at the component level. React Router handles all of the category switches. The webpack bundle was gzipped and hosted on AWS S3. The site is also moderately :) responsive so check it out on mobile.
 
-## Getting Started (if using Node/NPM)
-We're polygots. You'll find Python, R, Java, Javascript, and a few other technologies in use at Gridium. Use whatever you feel most comfortable with.
+Thank you again. Hope you enjoy!
 
-If you choose to go the JS route then the basic work is done. Use NPM to initialize things.
+## Usage
 
-### Prerequisites
+To run, visit this site: https://graysonhicks.github.io/frontend-developer.
 
-Node, NPM should be installed
+## Development Mode
 
-```
-> node -v
-v7.10.0
-> npm -v
-4.2.0
-```
+- git clone
+- git checkout dev
+- npm install
+- npm start
 
-### Installing
+## Deploy
 
-Install project dependencies
-
-```
-> npm i
-```
-
-### Running the Project
-
-[http-server](https://www.npmjs.com/package/http-server) has been included for convenience, run with the following script:
-```
-> npm start
-Starting up http-server, serving ./public
-Available on:
-  http://127.0.0.1:8080
-  http://192.168.1.213:8080
-  http://192.168.100.1:8080
-Hit CTRL-C to stop the server
-```
-
+- npm run build
+- npm run deploy
+- (manually gzipping and sending to s3 for now)

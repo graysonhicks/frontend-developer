@@ -1,0 +1,20 @@
+.start-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: $color-black-rock;
+  color: $color-titan-white;
+}
+
+.start-screen-heading {
+  font-family: $font-futura;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.start-screen-description {
+  font-family: $font-gotham-thin;
+  font-size: 20px;
+}

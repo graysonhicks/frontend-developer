@@ -1,0 +1,96 @@
+@media (max-width: 991px) {
+  .left-container {
+    height: auto;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .categories-item {
+    flex: 0;
+    min-width: 25%;
+    justify-content: center;
+    font-size: 2.5rem;
+    padding: 15px;
+  }
+
+  .category-label {
+    height: auto;
+  }
+
+  .box-row {
+    flex-direction: column;
+  }
+
+  .box {
+    &.table-box {
+      height: auto;
+      font-size: 3rem;
+    }
+
+    & .table {
+      & td {
+        font-size: 5rem;
+      }
+    }
+  }
+
+  .essentials {
+    .startdate,
+    .team-size {
+      .box-description,
+      .box-heading {
+        font-size: 5rem;
+      }
+    }
+  }
+
+  .methodology {
+    .checkbox-container {
+      .box-heading {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .specs {
+    .workload,
+    .workweek {
+      font-size: 7rem;
+    }
+  }
+
+  .chart-rows {
+    .chart-headings {
+      font-size: 2rem;
+    }
+
+    .chart-cols {
+      margin-bottom: 30px;
+    }
+
+    .chartjs-render-monitor {
+      padding-bottom: 30px;
+      margin-top: 30px;
+    }
+  }
+
+  .oops {
+    padding-top: 50px;
+
+    .oops-text {
+      font-size: 5rem;
+    }
+
+    .home-link {
+      font-size: 15rem;
+      display: block;
+    }
+  }
+}

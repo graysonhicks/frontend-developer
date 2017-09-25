@@ -1,0 +1,20 @@
+.other {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+
+  .start-screen-heading {
+    margin-top: 30px;
+
+    .at {
+      font-size: 2rem;
+    }
+  }
+
+  .others-text {
+    font-size: 4rem;
+    font-family: $font-gotham;
+  }
+}

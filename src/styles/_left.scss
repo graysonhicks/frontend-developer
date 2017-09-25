@@ -1,0 +1,38 @@
+.left-container {
+  padding-left: 0;
+  padding-right: 0;
+  background-color: $color-titan-white;
+  color: $color-black-rock;
+  height: 100vh;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.categories-item {
+  text-transform: capitalize;
+  flex: 1;
+  display: flex;
+  font-family: $font-gotham-light;
+  align-items: center;
+  letter-spacing: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.75rem;
+  transition: background-color 0.7s;
+
+  &:focus,
+  &:hover {
+    background-color: $color-malibu;
+    text-decoration: none;
+  }
+
+  .left-icons {
+    margin-right: 15px;
+  }
+}

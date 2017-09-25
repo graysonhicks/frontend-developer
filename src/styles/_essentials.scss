@@ -1,0 +1,64 @@
+.essentials {
+  .startdate,
+  .team-size {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .team-size {
+    .box-description {
+      font-size: 6rem;
+    }
+  }
+
+  .startdate {
+    background-color: $color-black-rock;
+    border: 1px solid $color-titan-white;
+    color: $color-titan-white;
+
+    .box-heading {
+      color: $color-titan-white;
+    }
+
+    .box-description {
+      font-size: 3rem;
+    }
+  }
+
+  .experience {
+    thead {
+      background-color: $color-heliotrope;
+    }
+  }
+
+  .employment-type {
+    thead {
+      background-color: $color-melrose;
+    }
+  }
+
+  .company-size {
+    thead {
+      background-color: $color-rose-of-sharon;
+    }
+  }
+
+  .locations {
+    padding: 0px;
+    .box-heading {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      padding: 8px;
+      color: $color-titan-white;
+      font-family: $font-gotham;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 20px;
+      background-color: $color-flirt;
+      z-index: 5;
+    }
+  }
+}
