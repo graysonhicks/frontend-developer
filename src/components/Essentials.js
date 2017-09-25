@@ -134,7 +134,7 @@ class Essentials extends Component {
               <Fade>
                 <div className="box-heading">Location</div>
                 <MapWithAMarker
-                  googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+                  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWXlgDbfW37K_XpKLeQEJq-2AJrQF8Pw4&v=3.exp&libraries=geometry,drawing,places"
                   loadingElement={<div style={{ height: `100%` }} />}
                   containerElement={<div style={{ height: `100%` }} />}
                   mapElement={<div style={{ height: `100%` }} />}
