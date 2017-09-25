@@ -14,7 +14,13 @@ To run, visit this site: https://graysonhicks.github.io/frontend-developer.
 
 ## Development Mode
 
-git clone
-git checkout dev
-npm install
-npm start
+- git clone
+- git checkout dev
+- npm install
+- npm start
+
+## Deploy
+
+- npm run build
+- npm run deploy
+- (manually gzipping and sending to s3 for now)
