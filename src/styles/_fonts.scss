@@ -1,44 +1,56 @@
-// 
-// @font-face {
-//   font-family: Futura;
-//   src: local("Futura"),
-//        url("../fonts/Futura.ttc");
-// }
-//
-// @font-face {
-//   font-family: Gotham;
-//   src: local("Gotham"),
-//        url("../fonts/Gotham Book Regular.otf");
-// }
-//
-// @font-face {
-//   font-family: Gotham Thin;
-//   src: local("Gotham Thin"),
-//        url("../fonts/GOTHAM THIN.ttf");
-// }
-//
-//
-// @font-face {
-//   font-family: Gotham Light;
-//   src: local("Gotham Light"),
-//        url("../fonts/GOTHAM LIGHT.otf");
-// }
-//
-// @font-face {
-//   font-family: Gotham Medium;
-//   src: local("Gotham Medium"),
-//        url("../fonts/GOTHAM MEDIUM.otf");
-// }
-//
-// @font-face {
-//   font-family: Gotham Bold;
-//   src: local("Gotham Bold"),
-//        url("../fonts/GOTHAM BOLD.otf");
-// }
+@font-face {
+    font-family: 'Oswald';
+    src: url('/fonts/Oswald-Regular.ttf');
+    font-weight: 'regular', 400;
+    font-style: normal;
+}
 
-$font-futura: 'Futura', 'Arial', 'Helvetica', sans-serif;
-$font-gotham: 'Gotham';
-$font-gotham-thin: 'Gotham Thin';
-$font-gotham-light: 'Gotham Light';
-$font-gotham-medium: 'Gotham Medium';
-$font-gotham-bold: 'Gotham Bold';
+@font-face {
+    font-family: 'Oswald';
+    src: url('/fonts/Oswald-Bold.ttf');
+    font-weight: 'bold', 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat Thin';
+    src: url('/fonts/Montserrat-Thin.ttf');
+    font-weight: 'thin', 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat Light';
+    src: url('/fonts/Montserrat-Light.ttf');
+    font-weight: 'light', 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/Montserrat-Regular.ttf');
+    font-weight: 'normal', 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat Medium';
+    src: url('/fonts/Montserrat-Medium.ttf');
+    font-weight: 'normal', 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat Bold';
+    src: url('/fonts/Montserrat-Bold.ttf');
+    font-weight: 'normal', 700;
+    font-style: normal;
+}
+
+
+$font-futura: 'Futura', 'Oswald', 'Arial', 'Helvetica', sans-serif;
+$font-gotham: 'Gotham', 'Montserrat', 'Arial', 'Helvetica', sans-serif;;
+$font-gotham-thin: 'Gotham Thin', 'Montserrat Thin', 'Arial', 'Helvetica', sans-serif;;
+$font-gotham-light: 'Gotham Light', 'Montserrat Light', 'Arial', 'Helvetica', sans-serif;;
+$font-gotham-medium: 'Gotham Medium', 'Montserrat Medium', 'Arial', 'Helvetica', sans-serif;;
+$font-gotham-bold: 'Gotham Bold', 'Montserrat Bold', 'Arial', 'Helvetica', sans-serif;;
