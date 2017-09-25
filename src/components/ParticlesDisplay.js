@@ -78,7 +78,8 @@ const ParticlesDisplay = ({ children, ...props }) => (
           "onhover": {
             "enable": true,
             "mode": "grab"
-          }
+          },
+          "resize": false
         },
         "modes": {
           "grab": {
