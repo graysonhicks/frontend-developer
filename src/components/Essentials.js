@@ -2,8 +2,31 @@ import React, {Component} from "react";
 import { Table } from 'react-bootstrap';
 import {IoCheckmarkCircled} from "react-icons/lib/io";
 import moment from "moment";
+const { compose } = require("recompose");
+import {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+} from "react-google-maps";
 
 import Fade from "./Fade";
+
+const MapWithAMarker = compose(
+      withScriptjs,
+      withGoogleMap
+    )(props =>
+      <GoogleMap
+        defaultZoom={8}
+        defaultCenter={{ lat: 39.7391536, lng: -104.9847034 }}
+      >
+        <Marker
+          position={{ lat: 39.7391536, lng: -104.9847034 }}
+        />
+      </GoogleMap>
+    );
+
+
 
 class Essentials extends Component {
   buildData() {
@@ -38,6 +61,7 @@ class Essentials extends Component {
   render() {
     const cleanData = this.buildData();
     const dataChoices = this.buildChoices();
+    console.log(MapWithAMarker);
 
     return (
       <div className="essentials">
@@ -106,10 +130,15 @@ class Essentials extends Component {
               </Table>
             </Fade>
           </div>
-            <div className="box locations">
+            <div className="box locations flex-2">
               <Fade>
-                <div className="box-heading">Locations</div>
-                <div>{cleanData.locations}</div>
+                <div className="box-heading">Location</div>
+                <MapWithAMarker
+                  googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+                  loadingElement={<div style={{ height: `100%` }} />}
+                  containerElement={<div style={{ height: `100%` }} />}
+                  mapElement={<div style={{ height: `100%` }} />}
+                />
               </Fade>
             </div>
         </div>

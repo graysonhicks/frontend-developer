@@ -44,4 +44,21 @@
       background-color: $color-rose-of-sharon;
     }
   }
+
+  .locations {
+    padding: 0px;
+    .box-heading {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      padding: 8px;
+      color: $color-titan-white;
+      font-family: $font-gotham;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 20px;
+      background-color: $color-flirt;
+      z-index: 5;
+    }
+  }
 }
